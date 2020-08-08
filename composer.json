@@ -1,0 +1,36 @@
+{
+  "name": "evgenybukharev/skote",
+  "description": "Easy Skote integration with Laravel",
+  "keywords": ["laravel", "skote", "admin", "administrator"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Evgeny Bukahrev",
+      "email": "bukharev.evgeny@ya.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "EvgenyBukharev\\Skote\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  },
+  "extra": {
+      "laravel": {
+          "providers": [
+              "EvgenyBukharev\\Skote\\ServiceProvider"
+          ]
+      }
+  },
+  "require": {
+    "laravel/framework": "~7.0.0",
+    "php": ">=5.5.9"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  }
+}
