@@ -63,7 +63,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     private function publishAssets()
     {
-        $this->publishes([$this->packagePath('resources/assets/dist') => public_path('vendor/skote'),], 'assets');
+        $this->publishes([$this->packagePath('resources/assets/dist') => public_path('assets/vendor/skote'),], 'assets');
     }
 
     private function packagePath($path)

@@ -1,0 +1,1 @@
+php artisan vendor:publish --provider="EvgenyBukharev\Skote\ServiceProvider" --tag=assets

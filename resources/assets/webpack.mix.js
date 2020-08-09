@@ -7,7 +7,7 @@ const folder = {
     dist_assets: "dist/" //build assets files
 };
 mix.setPublicPath('dist');
-mix.setResourceRoot('/assets/');
+mix.setResourceRoot('/assets/vendor/skote/');
 
 
 var third_party_assets = {
