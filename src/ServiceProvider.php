@@ -2,14 +2,14 @@
 
 namespace EvgenyBukharev\Skote;
 
-use EvgenyBukharev\Skote\Http\ViewCoXmposers\SkoteComposer;
+use EvgenyBukharev\Skote\Http\ViewComposers\SkoteComposer;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Container\Container;
 
 
-class ServiceProvider extends Illuminate\Support\ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function register()
     {
