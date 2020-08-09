@@ -3,21 +3,12 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="{{ route('dashboard') }}" class="logo logo-dark">
-                      <span class="logo-sm">
-                        <img src="/favicon-32x32.png" alt="" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="/skote-logo.svg" alt="" height="17">
-                    </span>
-                </a>
-
                 <a href="{{ route('dashboard') }}" class="logo logo-light">
                      <span class="logo-sm">
-                        <img src="/favicon-32x32.png" alt="" height="22">
+                        <img src="/skote-logo-small-light.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="/skote-logo.svg" alt="" height="19">
+                        <img src="/skote-logo-big-light.png" alt="" height="19">
                     </span>
                 </a>
             </div>
