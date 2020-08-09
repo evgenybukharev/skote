@@ -41,7 +41,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="avatar-md profile-user-wid mb-4">
-                                <img src="assets/admin/images/users/avatar-1.jpg" alt=""
+                                <img src="assets/vendor/skote/images/users/avatar-1.jpg" alt=""
                                      class="img-thumbnail rounded-circle">
                             </div>
 

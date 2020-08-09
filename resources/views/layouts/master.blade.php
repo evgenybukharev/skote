@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon-apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    @include('admin.layouts.head')
+    @include('skote::layouts.head')
 </head>
 @section('body')
 @show
@@ -32,8 +32,8 @@
 </div>
 <!-- Begin page -->
 <div id="layout-wrapper">
-@include('admin.layouts.topbar')
-@include('admin.layouts.sidebar')
+@include('skote::layouts.topbar')
+@include('skote::layouts.sidebar')
 
 <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -41,13 +41,13 @@
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
-                @include('partials.flash')
+                @include('skote::partials.flash')
                 @yield('content')
             </div>
             <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
-        @include('admin.layouts.footer')
+        @include('skote::layouts.footer')
     </div>
     <!-- end main content-->
 </div>
@@ -57,6 +57,6 @@
 <div class="rightbar-overlay"></div>
 
 <!-- JAVASCRIPT -->
-@include('admin.layouts.footer-script')
+@include('skote::layouts.footer-script')
 </body>
 </html>

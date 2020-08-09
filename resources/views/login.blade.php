@@ -1,4 +1,4 @@
-@extends('admin.layouts.master-without-nav')
+@extends('skote::layouts.master-without-nav')
 
 @section('title')
     Вход

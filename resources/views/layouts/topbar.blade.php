@@ -8,7 +8,7 @@
                         <img src="/favicon-32x32.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="/assets/images/svg/header-logo.svg" alt="" height="17">
+                        <img src="/skote-logo.svg" alt="" height="17">
                     </span>
                 </a>
 
@@ -17,7 +17,7 @@
                         <img src="/favicon-32x32.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="/assets/images/svg/header-logo.svg" alt="" height="19">
+                        <img src="/skote-logo.svg" alt="" height="19">
                     </span>
                 </a>
             </div>
@@ -65,7 +65,7 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="/assets/admin/images/users/avatar-1.jpg"
+                    <img class="rounded-circle header-profile-user" src="/assets/vendor/skote/images/users/avatar-1.jpg"
                          alt="Header Avatar">
                     <span class="d-none d-xl-inline-block ml-1">{{Auth::user()->name}}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>

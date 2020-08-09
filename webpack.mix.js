@@ -2,11 +2,11 @@ const mix = require('laravel-mix');
 const lodash = require("lodash");
 
 const folder = {
-    src: "src", // source files
-    dist: "src", // build files
-    dist_assets: "dist/" //build assets files
+    src: "resources/assets/src", // source files
+    dist: "resources/assets/src", // build files
+    dist_assets: "resources/assets/dist/" //build assets files
 };
-mix.setPublicPath('dist');
+mix.setPublicPath('resources/assets/dist');
 mix.setResourceRoot('/assets/vendor/skote/');
 
 

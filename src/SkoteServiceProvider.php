@@ -9,7 +9,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Container\Container;
 
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class SkoteServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     public function register()
     {
