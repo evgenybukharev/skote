@@ -5,10 +5,10 @@
             <div class="navbar-brand-box">
                 <a href="{{ route('dashboard') }}" class="logo logo-light">
                      <span class="logo-sm">
-                        <img src="{{config('skote.path.logo-small','skote-logo-small-light.png')}}" alt="" height="22">
+                        <img src="{{config('skote.path.logo-small','skote-logo-small-light.png')}}" alt="">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{config('skote.path.logo-big','skote-logo-big-light.png')}}" alt="" height="19">
+                        <img src="{{config('skote.path.logo-big','skote-logo-big-light.png')}}" alt="">
                     </span>
                 </a>
             </div>
