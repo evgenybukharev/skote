@@ -1,0 +1,17 @@
+{
+    "/js/app.min.js": "/js/app.min.js",
+    "/css/app.css": "/css/app.css",
+    "/libs/jquery/jquery.min.js": "/libs/jquery/jquery.min.js",
+    "/libs/bootstrap/bootstrap.min.js": "/libs/bootstrap/bootstrap.min.js",
+    "/libs/metismenu/metismenu.min.js": "/libs/metismenu/metismenu.min.js",
+    "/libs/simplebar/simplebar.min.js": "/libs/simplebar/simplebar.min.js",
+    "/libs/node-waves/node-waves.min.js": "/libs/node-waves/node-waves.min.js",
+    "/libs/noty/noty.min.js": "/libs/noty/noty.min.js",
+    "/libs/noty/noty.min.css": "/libs/noty/noty.min.css",
+    "/libs/select2/select2.min.js": "/libs/select2/select2.min.js",
+    "/libs/select2/select2.min.css": "/libs/select2/select2.min.css",
+    "/libs/jquery-repeater/jquery-repeater.min.js": "/libs/jquery-repeater/jquery-repeater.min.js",
+    "/libs/jquery-validation/jquery-validation.min.js": "/libs/jquery-validation/jquery-validation.min.js",
+    "/libs/slugify/slugify.min.js": "/libs/slugify/slugify.min.js",
+    "/css/app.min.css": "/css/app.min.css"
+}
