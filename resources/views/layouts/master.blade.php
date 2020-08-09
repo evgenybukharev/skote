@@ -9,10 +9,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ URL::asset('favicon.ico')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon-apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="{{config('skote.path.favicon','favicon.ico')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{config('skote.path.favicon-apple','favicon-apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{config('skote.path.favicon-32','favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{config('skote.path.favicon-16','favicon-16x16.png')}}">
     @include('skote::layouts.head')
 </head>
 @section('body')
