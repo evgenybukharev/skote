@@ -1,2 +1,2 @@
-php artisan vendor:publish --provider="EvgenyBukharev\Skote\ServiceProvider" --tag=assets
-php artisan vendor:publish --provider="EvgenyBukharev\Skote\ServiceProvider" --tag=assets --force
+php artisan vendor:publish --provider="EvgenyBukharev\Skote\SkoteServiceProvider" --tag=assets
+php artisan vendor:publish --provider="EvgenyBukharev\Skote\SkoteServiceProvider" --tag=assets --force
