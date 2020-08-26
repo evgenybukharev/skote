@@ -11,15 +11,14 @@
             $column['text'] = Lang::has('skote::crud.yes')?trans('skote::crud.yes'):'Yes';
         }
     }else {
-        $related_key = 0;
-        if ( isset( $column['options'][0] ) ) {
-            $column['text'] = $column['options'][0];
+        if ( isset( $column['options'][$value] ) ) {
+            $column['text'] = $column['options'][$value];
             $column['escaped'] = false;
         } else {
             $column['text'] = Lang::has('skote::crud.no')?trans('skote::crud.no'):'No';
         }
     }
-    $column['escaped'] = $column['escaped'] ?? true;
+    $column['escaped'] = $column['escaped'] ?? true
 
 @endphp
 

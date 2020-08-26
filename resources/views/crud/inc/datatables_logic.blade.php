@@ -209,10 +209,10 @@
               "url": "{!! url($crud->route.'/search').'?'.Request::getQueryString() !!}",
               "type": "POST"
           },
-          dom:
-            "<'row hidden'<'col-sm-6 hidden-xs'i><'col-sm-6 hidden-print'f>>" +
-            "<'row'<'col-sm-12'tr>>" +
-            "<'row mt-2 '<'col-sm-6 col-md-4'l><'col-sm-2 col-md-4 text-center'B><'col-sm-6 col-md-4 hidden-print'p>>",
+          // dom:
+          //   "<'row hidden'<'col-sm-6 hidden-xs'i><'col-sm-6 hidden-print'f>>" +
+          //   "<'row'<'col-sm-12'tr>>" +
+          //   "<'row mt-2 '<'col-sm-6 col-md-4'l><'col-sm-2 col-md-4 text-center'B><'col-sm-6 col-md-4 hidden-print'p>>",
       }
   }
   </script>
@@ -225,17 +225,17 @@
       crud.table = $("#crudTable").DataTable(crud.dataTableConfiguration);
 
       // move search bar
-      $("#crudTable_filter").appendTo($('#datatable_search_stack' ));
-      $("#crudTable_filter input").removeClass('form-control-sm');
-
+      // $("#crudTable_filter").appendTo($('#datatable_search_stack' ));
+      // $("#crudTable_filter input").removeClass('form-control-sm');
+        $("#crudTable_filter input").removeClass('form-control-sm');
       // move "showing x out of y" info to header
-      $("#datatable_info_stack").html($('#crudTable_info')).css('display','inline-flex').addClass('animated fadeIn');
+      // $("#datatable_info_stack").html($('#crudTable_info')).css('display','inline-flex').addClass('animated fadeIn');
 
       @if($crud->getOperationSetting('resetButton') ?? true)
         // create the reset button
-        var crudTableResetButton = '<a href="{{url($crud->route)}}" class="ml-1" id="crudTable_reset_button">{{ trans('skote::crud.reset') }}</a>';
+        var crudTableResetButton = '<a href="{{url($crud->route)}}" class="btn btn-light waves-effect m-t-15" id="crudTable_reset_button">{{ trans('skote::crud.reset') }}</a>';
 
-        $('#datatable_info_stack').append(crudTableResetButton);
+        $('#crudTable_filter').append(crudTableResetButton);
 
           // when clicking in reset button we clear the localStorage for datatables.
         $('#crudTable_reset_button').on('click', function() {

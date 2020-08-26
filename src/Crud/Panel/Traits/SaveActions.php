@@ -2,7 +2,11 @@
 
 namespace EvgenyBukharev\Skote\Crud\Panel\Traits;
 
+use Alert;
+use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
+use Redirect;
+use Request;
 
 trait SaveActions
 {
@@ -14,7 +18,7 @@ trait SaveActions
      */
     public function getSaveActionDefaultForCurrentOperation()
     {
-        return config('backpack.crud.operations.'.$this->getCurrentOperation().'.defaultSaveAction', 'save_and_back');
+        return config('skote.crud.operations.'.$this->getCurrentOperation().'.defaultSaveAction', 'save_and_back');
     }
 
     /**
@@ -305,15 +309,15 @@ trait SaveActions
     public function setSaveAction($forceSaveAction = null)
     {
         $saveAction = $forceSaveAction ?:
-            \Request::input('save_action', $this->getFallBackSaveAction());
+            Request::input('save_action', $this->getFallBackSaveAction());
 
-        $showBubble = $this->getOperationSetting('showSaveActionChange') ?? config('backpack.crud.operations.'.$this->getCurrentOperation().'.showSaveActionChange') ?? true;
+        $showBubble = $this->getOperationSetting('showSaveActionChange') ?? config('skote.crud.operations.'.$this->getCurrentOperation().'.showSaveActionChange') ?? true;
 
         if (
             $showBubble &&
             session($this->getCurrentOperation().'.saveAction', 'save_and_back') !== $saveAction
         ) {
-            \Alert::info(trans('skote::crud.save_action_changed_notification'))->flash();
+            Alert::info(trans('skote::crud.save_action_changed_notification'))->flash();
         }
 
         session([$this->getCurrentOperation().'.saveAction' => $saveAction]);
@@ -324,11 +328,11 @@ trait SaveActions
      *
      * @param string $itemId
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function performSaveAction($itemId = null)
     {
-        $request = \Request::instance();
+        $request = Request::instance();
         $saveAction = $request->input('save_action', $this->getFallBackSaveAction());
         $itemId = $itemId ?: $request->input('id');
         $actions = $this->getOperationSetting('save_actions');
@@ -360,7 +364,7 @@ trait SaveActions
             session()->flash('referrer_url_override', $referrer_url);
         }
 
-        return \Redirect::to($redirectUrl);
+        return Redirect::to($redirectUrl);
     }
 
     /**

@@ -2,6 +2,10 @@
 
 namespace EvgenyBukharev\Skote\Crud\Panel\Traits;
 
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Route;
+
 /**
  * Properties and methods used by the List operation.
  */
@@ -18,7 +22,7 @@ trait Read
             return $this->entry->getKey();
         }
 
-        $params = \Route::current()->parameters();
+        $params = Route::current()->parameters();
 
         return  // use the entity name to get the current entry
                 // this makes sure the ID is corrent even for nested resources
@@ -32,7 +36,7 @@ trait Read
     /**
      * Find and retrieve the current entry.
      *
-     * @return \Illuminate\Database\Eloquent\Model|bool The row in the db or false.
+     * @return Model|bool The row in the db or false.
      */
     public function getCurrentEntry()
     {
@@ -50,7 +54,7 @@ trait Read
      *
      * @param int The id of the row in the db to fetch.
      *
-     * @return \Illuminate\Database\Eloquent\Model The row in the db.
+     * @return Model The row in the db.
      */
     public function getEntry($id)
     {
@@ -67,7 +71,7 @@ trait Read
      *
      * @param int The id of the row in the db to fetch.
      *
-     * @return \Illuminate\Database\Eloquent\Model The row in the db.
+     * @return Model The row in the db.
      */
     public function getEntryWithoutFakes($id)
     {
@@ -90,7 +94,7 @@ trait Read
     /**
      * Get all entries from the database.
      *
-     * @return array|\Illuminate\Database\Eloquent\Collection
+     * @return array|Collection
      */
     public function getEntries()
     {
@@ -192,7 +196,7 @@ trait Read
      */
     public function getDefaultPageLength()
     {
-        return $this->getOperationSetting('defaultPageLength') ?? config('backpack.crud.operations.list.defaultPageLength') ?? 25;
+        return $this->getOperationSetting('defaultPageLength') ?? config('skote.crud.operations.list.defaultPageLength') ?? 25;
     }
 
     /**

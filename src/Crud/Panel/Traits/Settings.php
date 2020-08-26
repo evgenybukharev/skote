@@ -147,7 +147,7 @@ trait Settings
     public function loadDefaultOperationSettingsFromConfig($configPath = null)
     {
         $operation = $this->getCurrentOperation();
-        $configPath = $configPath ?? 'backpack.crud.operations.'.$operation;
+        $configPath = $configPath ?? 'skote.crud.operations.'.$operation;
         $configSettings = config($configPath);
 
         if (is_array($configSettings) && count($configSettings)) {

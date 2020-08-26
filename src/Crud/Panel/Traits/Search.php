@@ -3,7 +3,10 @@
 namespace EvgenyBukharev\Skote\Crud\Panel\Traits;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Validator;
+use View;
 
 trait Search
 {
@@ -18,7 +21,7 @@ trait Search
      *
      * @param string $searchTerm Whatever string the user types in the search bar.
      *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return Builder
      */
     public function applySearchTerm($searchTerm)
     {
@@ -119,7 +122,7 @@ trait Search
             return $this->getOperationSetting('responsiveTable');
         }
 
-        return config('backpack.crud.operations.list.responsiveTable');
+        return config('skote.crud.operations.list.responsiveTable');
     }
 
     /**
@@ -163,7 +166,7 @@ trait Search
             return $this->getOperationSetting('persistentTable');
         }
 
-        return config('backpack.crud.operations.list.persistentTable');
+        return config('skote.crud.operations.list.persistentTable');
     }
 
     /**
@@ -177,7 +180,7 @@ trait Search
             return $this->getOperationSetting('persistentTableDuration');
         }
 
-        return config('backpack.crud.operations.list.persistentTableDuration', false);
+        return config('skote.crud.operations.list.persistentTableDuration', false);
     }
 
     /**
@@ -199,7 +202,7 @@ trait Search
     /**
      * Get the HTML of the cells in a table row, for a certain DB entry.
      *
-     * @param \Illuminate\Database\Eloquent\Model $entry     A db entry of the current entity;
+     * @param Model $entry     A db entry of the current entity;
      * @param bool|int                            $rowNumber The number shown to the user as row number (index);
      *
      * @return array Array of HTML cell contents.
@@ -214,7 +217,7 @@ trait Search
 
         // add the buttons as the last column
         if ($this->buttons()->where('stack', 'line')->count()) {
-            $row_items[] = \View::make('skote::crud.inc.button_stack', ['stack' => 'line'])
+            $row_items[] = View::make('skote::crud.inc.button_stack', ['stack' => 'line'])
                                 ->with('crud', $this)
                                 ->with('entry', $entry)
                                 ->with('row_number', $rowNumber)
@@ -223,7 +226,7 @@ trait Search
 
         // add the details_row button to the first column
         if ($this->getOperationSetting('detailsRow')) {
-            $details_row_button = \View::make('skote::crud.columns.inc.details_row_button')
+            $details_row_button = View::make('skote::crud.columns.inc.details_row_button')
                                            ->with('crud', $this)
                                            ->with('entry', $entry)
                                            ->with('row_number', $rowNumber)
@@ -238,7 +241,7 @@ trait Search
      * Get the HTML of a cell, using the column types.
      *
      * @param array                               $column
-     * @param \Illuminate\Database\Eloquent\Model $entry     A db entry of the current entity;
+     * @param Model $entry     A db entry of the current entity;
      * @param bool|int                            $rowNumber The number shown to the user as row number (index);
      *
      * @return string
@@ -292,7 +295,7 @@ trait Search
             $view = 'skote::crud.columns.text'; // fallback to text column
         }
 
-        return \View::make($view)
+        return View::make($view)
             ->with('crud', $this)
             ->with('column', $column)
             ->with('entry', $entry)

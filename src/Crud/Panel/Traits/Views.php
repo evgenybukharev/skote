@@ -47,7 +47,7 @@ trait Views
      */
     public function getCreateContentClass()
     {
-        return $this->get('create.contentClass') ?? config('backpack.crud.operations.create.contentClass', 'col-md-8 bold-labels');
+        return $this->get('create.contentClass') ?? config('skote.crud.operations.create.contentClass', 'col-md-8 bold-labels');
     }
 
     // -------
@@ -93,7 +93,7 @@ trait Views
      */
     public function getListContentClass()
     {
-        return $this->get('list.contentClass') ?? config('backpack.crud.operations.list.contentClass', 'col-md-12');
+        return $this->get('list.contentClass') ?? config('skote.crud.operations.list.contentClass', 'col-md-12');
     }
 
     /**
@@ -157,7 +157,7 @@ trait Views
      */
     public function getShowContentClass()
     {
-        return $this->get('show.contentClass') ?? config('backpack.crud.operations.show.contentClass', 'col-md-8 col-md-offset-2');
+        return $this->get('show.contentClass') ?? config('skote.crud.operations.show.contentClass', 'col-md-8 col-md-offset-2');
     }
 
     // -------
@@ -203,7 +203,7 @@ trait Views
      */
     public function getEditContentClass()
     {
-        return $this->get('update.contentClass') ?? config('backpack.crud.operations.update.contentClass', 'col-md-8 bold-labels');
+        return $this->get('update.contentClass') ?? config('skote.crud.operations.update.contentClass', 'col-md-8 bold-labels');
     }
 
     /**
@@ -245,7 +245,7 @@ trait Views
      */
     public function getReorderContentClass()
     {
-        return $this->get('reorder.contentClass') ?? config('backpack.crud.operations.reorder.contentClass', 'col-md-8 col-md-offset-2');
+        return $this->get('reorder.contentClass') ?? config('skote.crud.operations.reorder.contentClass', 'col-md-8 col-md-offset-2');
     }
 
     // -------
