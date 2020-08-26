@@ -10,6 +10,8 @@ return [
         'favicon-32' => 'favicon-32x32.png',
     ],
     'url' => [
-        'login' => 'login',
+        'login' => 'admin.login',
+        'logout' => 'admin.logout',
+        'dashboard' => 'admin.dashboard',
     ],
 ];

@@ -3,7 +3,7 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="{{ route('dashboard') }}" class="logo logo-light">
+                <a href="{{ route(config('skote.url.dashboard', 'dashboard')) }}" class="logo logo-light">
                      <span class="logo-sm">
                         <img src="{{config('skote.path.logo-small','skote-logo-small-light.png')}}" alt="">
                     </span>
@@ -66,7 +66,7 @@
                     {{--                    <a class="dropdown-item" href="contacts-profile"><i class="bx bx-user font-size-16 align-middle mr-1"></i> {{ __('Profile') }}</a>--}}
                     {{--                    <div class="dropdown-divider"></div>--}}
                     <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> {{ __('auth.logout') }} </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route(config('skote.url.logout', 'logout')) }}" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </div>

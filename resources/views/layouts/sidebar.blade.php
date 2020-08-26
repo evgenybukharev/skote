@@ -8,7 +8,7 @@
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li>
-                    <a href="{{ route('dashboard') }}" class="waves-effect">
+                    <a href="{{ route(config('skote.url.dashboard', 'dashboard')) }}" class="waves-effect">
                         <i class="bx bx-home-circle"></i>
                         <span>Панель управления</span>
                     </a>
