@@ -27,14 +27,14 @@
 			  text: "{!! trans('skote::crud.cancel') !!}",
 			  value: null,
 			  visible: true,
-			  className: "bg-secondary",
+			  className: "btn btn-outline-primary waves-effect waves-light",
 			  closeModal: true,
 			},
 		  	delete: {
 			  text: "{!! trans('skote::crud.delete') !!}",
 			  value: true,
 			  visible: true,
-			  className: "bg-danger",
+			  className: "btn btn-outline-danger waves-effect waves-light",
 			}
 		  },
 		}).then((value) => {
@@ -51,7 +51,7 @@
 		                  }).show();
 
 			              // Hide the modal, if any
-			              $('.modal').modal('hide');
+			              // $('.modal').modal('hide');
 
 			              // Remove the details row, if it is open
 			              if (row.hasClass("shown")) {

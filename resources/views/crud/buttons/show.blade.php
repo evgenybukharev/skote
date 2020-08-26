@@ -2,7 +2,7 @@
 	@if (!$crud->model->translationEnabled())
 
 	<!-- Single edit button -->
-	<a href="{{ url($crud->route.'/'.$entry->getKey().'/show') }}" class="btn btn-sm btn-link"><i class="la la-eye"></i> {{ trans('skote::crud.preview') }}</a>
+	<a href="{{ url($crud->route.'/'.$entry->getKey().'/show') }}" class="btn btn-sm btn-outline-info waves-effect waves-light"><i class="la la-eye"></i> {{ trans('skote::crud.preview') }}</a>
 
 	@else
 
