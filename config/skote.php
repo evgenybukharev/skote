@@ -15,4 +15,11 @@ return [
         'dashboard' => 'admin.dashboard',
         'settings' => 'admin.settings',
     ],
+    'crud' => [
+        'operations' => [
+            'list' => [
+                'pageLengthMenu' => [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'skote::crud.all']],
+            ],
+        ],
+    ],
 ];

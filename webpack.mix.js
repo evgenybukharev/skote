@@ -33,6 +33,17 @@ var third_party_assets = {
                 "./node_modules/jquery-validation/dist/localization/messages_ru.js"
             ]},
         {"name": "slugify", "assets": ["./node_modules/slugify/slugify.js"]},
+        {
+            "name": "datatables", "assets": [
+                "./node_modules/datatables.net/js/jquery.dataTables.min.js",
+                "./node_modules/datatables.net-buttons-dt/js/buttons.dataTables.min.js",
+                "./node_modules/datatables.net-buttons/js/dataTables.buttons.min.js",
+                "./node_modules/datatables.net-buttons/js/buttons.html5.min.js",
+                "./node_modules/datatables.net-buttons/js/buttons.print.min.js",
+                "./node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css",
+                "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js",
+            ]
+        },
     ]
 };
 

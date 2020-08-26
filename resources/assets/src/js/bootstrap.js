@@ -15,3 +15,9 @@ window.Noty.overrideDefaults({
     theme: 'relax',
     closeWith: ['click', 'button'],
 });
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});

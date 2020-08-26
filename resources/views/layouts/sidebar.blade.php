@@ -36,8 +36,8 @@
                         @break
                         @case('link')
                         <li>
-                            <a href="{{$item['href']}}<" class="waves-effect">
-                                <i class="{{$item['icon']}}<"></i>
+                            <a href="{{$item['href']}}" class="waves-effect">
+                                <i class="{{$item['icon']}}"></i>
                                 <span>{{$item['title']}}</span>
                             </a>
                         </li>

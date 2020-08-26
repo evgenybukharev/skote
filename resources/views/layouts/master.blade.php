@@ -42,6 +42,7 @@
         <div class="page-content">
             <div class="container-fluid">
                 @include('skote::partials.flash')
+                @yield('content-header')
                 @yield('content')
             </div>
             <!-- container-fluid -->

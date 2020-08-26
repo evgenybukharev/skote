@@ -2,19 +2,23 @@
 
 namespace EvgenyBukharev\Skote;
 
+use Illuminate\Support\Facades\App;
 use EvgenyBukharev\Skote\Components\Menu\MenuRenderer;
 use EvgenyBukharev\Skote\Components\Menu\MenuRendererInterface;
+use EvgenyBukharev\Skote\Crud\Panel\CrudPanel;
 use EvgenyBukharev\Skote\Http\ViewComposers\SkoteComposer;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 
 class SkoteServiceProvider extends ServiceProvider
 {
-
+    public $routeFilePath = '/routes/base.php';
     /**
      *
      */
@@ -28,6 +32,17 @@ class SkoteServiceProvider extends ServiceProvider
         });
 
         $this->app->bind(MenuRendererInterface::class,MenuRenderer::class);
+
+        // Bind the CrudPanel object to Laravel's service container
+        $this->app->singleton('crud', function ($app) {
+            return new CrudPanel($app);
+        });
+
+        // load a macro for Route,
+        // helps developers load all routes for a CRUD resource in one line
+        if (! Route::hasMacro('crud')) {
+            $this->addRouteMacro();
+        }
     }
 
     /**
@@ -39,13 +54,87 @@ class SkoteServiceProvider extends ServiceProvider
     {
         $this->loadViews();
 
+        $this->setupRoutes($this->app->router);
+
         $this->loadTranslations();
 
         $this->publishConfig();
 
         $this->publishAssets();
 
+        $this->loadHelpers();
+
         $this->registerViewComposers($view);
+    }
+
+    /**
+     * The route macro allows developers to generate the routes for a CrudController,
+     * for all operations, using a simple syntax: Route::crud().
+     *
+     * It will go to the given CrudController and get the setupRoutes() method on it.
+     */
+    private function addRouteMacro()
+    {
+        Route::macro('crud', function ($name, $controller) {
+            // put together the route name prefix,
+            // as passed to the Route::group() statements
+            $routeName = '';
+            if ($this->hasGroupStack()) {
+                foreach ($this->getGroupStack() as $key => $groupStack) {
+                    if (isset($groupStack['name'])) {
+                        if (is_array($groupStack['name'])) {
+                            $routeName = implode('', $groupStack['name']);
+                        } else {
+                            $routeName = $groupStack['name'];
+                        }
+                    }
+                }
+            }
+            // add the name of the current entity to the route name prefix
+            // the result will be the current route name (not ending in dot)
+            $routeName .= $name;
+
+            // get an instance of the controller
+            if ($this->hasGroupStack()) {
+                $groupStack = $this->getGroupStack();
+                $groupNamespace = $groupStack && isset(end($groupStack)['namespace']) ? end($groupStack)['namespace'].'\\' : '';
+            } else {
+                $groupNamespace = '';
+            }
+            $namespacedController = $groupNamespace.$controller;
+            $controllerInstance = App::make($namespacedController);
+
+            return $controllerInstance->setupRoutes($name, $routeName, $controller);
+        });
+    }
+
+
+    /**
+     * Define the routes for the application.
+     *
+     * @param \Illuminate\Routing\Router $router
+     *
+     * @return void
+     */
+    public function setupRoutes(Router $router)
+    {
+        // by default, use the routes file provided in vendor
+        $routeFilePathInUse = __DIR__.$this->routeFilePath;
+
+        // but if there's a file with the same name in routes/backpack, use that one
+        if (file_exists(base_path().$this->routeFilePath)) {
+            $routeFilePathInUse = base_path().$this->routeFilePath;
+        }
+
+        $this->loadRoutesFrom($routeFilePathInUse);
+    }
+
+    /**
+     * Load the Backpack helper methods, for convenience.
+     */
+    public function loadHelpers()
+    {
+        require_once __DIR__.'/helpers.php';
     }
 
     /**

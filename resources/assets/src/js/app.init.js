@@ -94,7 +94,7 @@
             }
 
             $('body').removeClass('right-bar-enabled');
-            return;
+
         });
     }
 
