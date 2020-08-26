@@ -9,4 +9,7 @@ return [
         'favicon-16' => 'favicon-16x16.png',
         'favicon-32' => 'favicon-32x32.png',
     ],
+    'url' => [
+        'login' => 'login',
+    ],
 ];

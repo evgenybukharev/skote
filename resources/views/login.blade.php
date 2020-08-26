@@ -38,7 +38,7 @@
                                     </a>
                                 </div>
                                 <div class="p-2">
-                                    <form method="POST" class="form-horizontal" action="{{ route('login') }}">
+                                    <form method="POST" class="form-horizontal" action="{{ route(config('skote.url.login', 'login')) }}">
                                         @csrf
                                         <div class="form-group">
                                             <label for="username">{{ __('auth.email') }}</label>
