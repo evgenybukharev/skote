@@ -1,5 +1,7 @@
 @extends('skote::layouts.master')
 
+@section('title',$crud->getHeading() ?? $crud->entity_name_plural)
+
 @section('content')
     <div class="row">
         <div class="col-12">
@@ -139,9 +141,9 @@
     {{--  <link rel="stylesheet" type="text/css" href="{{ asset('packages/datatables.net-fixedheader-bs4/css/fixedHeader.bootstrap4.min.css') }}">--}}
     {{--  <link rel="stylesheet" type="text/css" href="{{ asset('packages/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">--}}
 
-    <link rel="stylesheet" href="{{ asset('packages/backpack/crud/css/crud.css') }}">
-    <link rel="stylesheet" href="{{ asset('packages/backpack/crud/css/form.css') }}">
-    <link rel="stylesheet" href="{{ asset('packages/backpack/crud/css/list.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/skote/crud/css/crud.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/skote/crud/css/form.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/skote/crud/css/list.css') }}">
 
     <!-- CRUD LIST CONTENT - crud_list_styles stack -->
     @stack('crud_list_styles')
@@ -149,9 +151,9 @@
 
 @section('script-bottom')
     @include('skote::crud.inc.datatables_logic')
-    <script src="{{ asset('packages/backpack/crud/js/crud.js') }}"></script>
-    <script src="{{ asset('packages/backpack/crud/js/form.js') }}"></script>
-    <script src="{{ asset('packages/backpack/crud/js/list.js') }}"></script>
+    <script src="{{ asset('assets/vendor/skote/crud/js/crud.js') }}"></script>
+    <script src="{{ asset('assets/vendor/skote/crud/js/form.js') }}"></script>
+    <script src="{{ asset('assets/vendor/skote/crud/js/list.js') }}"></script>
 
     <!-- CRUD LIST CONTENT - crud_list_scripts stack -->
     @stack('crud_list_scripts')

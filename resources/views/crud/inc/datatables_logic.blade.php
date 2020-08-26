@@ -231,9 +231,10 @@
       // move "showing x out of y" info to header
       // $("#datatable_info_stack").html($('#crudTable_info')).css('display','inline-flex').addClass('animated fadeIn');
 
+        $('#crudTable_length select').removeClass('custom-select-sm');
       @if($crud->getOperationSetting('resetButton') ?? true)
         // create the reset button
-        var crudTableResetButton = '<a href="{{url($crud->route)}}" class="btn btn-light waves-effect m-t-15" id="crudTable_reset_button">{{ trans('skote::crud.reset') }}</a>';
+        var crudTableResetButton = '<a href="{{url($crud->route)}}" class="btn btn-light waves-effect m-l-10" id="crudTable_reset_button">{{ trans('skote::crud.reset') }}</a>';
 
         $('#crudTable_filter').append(crudTableResetButton);
 
