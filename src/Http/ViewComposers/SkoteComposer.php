@@ -13,10 +13,18 @@ class SkoteComposer
      */
     private $skote;
 
+    /**
+     * SkoteComposer constructor.
+     *
+     * @param Skote $skote
+     */
     public function __construct(Skote $skote) {
         $this->skote = $skote;
     }
 
+    /**
+     * @param View $view
+     */
     public function compose(View $view)
     {
         $view->with('skote', $this->skote);

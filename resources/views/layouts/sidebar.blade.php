@@ -1,3 +1,4 @@
+@php($menu=app()->make(\EvgenyBukharev\Skote\Components\Menu\MenuRendererInterface::class)->getMenu())
 <!-- ========== Left Sidebar Start ========== -->
 <div class="vertical-menu">
 
@@ -14,23 +15,35 @@
                     </a>
                 <li>
 
-                <li class="menu-title">Сайт</li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-file"></i>
-                        <span>Категории</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="">Список</a></li>
-                        <li><a href="">Добавить категорию</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{config('app_settings.url')}}" class="waves-effect">
-                        <i class="bx bx-file"></i>
-                        <span>Настройки</span>
-                    </a>
-                </li>
+                @foreach($menu as $item)
+
+                    @switch($item['type'])
+                        @case('section')
+                        <li class="menu-title">{{$item['title']}}</li>
+                        @break
+                        @case('link-block')
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="{{$item['icon']}}"></i>
+                                <span>{{$item['title']}}</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                @foreach($item['links'] as $subItem)
+                                <li><a href="{{$subItem['href']}}">{{$subItem['title']}}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        @break
+                        @case('link')
+                        <li>
+                            <a href="{{$item['href']}}<" class="waves-effect">
+                                <i class="{{$item['icon']}}<"></i>
+                                <span>{{$item['title']}}</span>
+                            </a>
+                        </li>
+                        @break
+                    @endswitch
+                @endforeach
             </ul>
         </div>
         <!-- Sidebar -->
