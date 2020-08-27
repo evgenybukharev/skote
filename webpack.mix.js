@@ -22,6 +22,10 @@ var third_party_assets = {
                 "./node_modules/noty/lib/noty.css",
                 "./node_modules/noty/lib/themes/relax.css"
             ]},
+        {"name": "ckeditor", "assets": [
+                "./node_modules/ckeditor/ckeditor.js",
+                "./node_modules/ckeditor/adapters/jquery.js",
+            ]},
         {
             "name": "select2",
             "assets": ["./node_modules/select2/dist/js/select2.min.js", "./node_modules/select2/dist/css/select2.min.css"]

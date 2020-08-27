@@ -3,7 +3,7 @@
     $field['extra_plugins'] = isset($field['extra_plugins']) ? implode(',', $field['extra_plugins']) : "embed,widget";
 
     $defaultOptions = [
-        "filebrowserBrowseUrl" => backpack_url('elfinder/ckeditor'),
+        "filebrowserBrowseUrl" => skote_url('elfinder/ckeditor'),
         "extraPlugins" => $field['extra_plugins'],
         "embed_provider" => "//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}",
     ];

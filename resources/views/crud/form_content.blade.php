@@ -1,14 +1,11 @@
 
 <input type="hidden" name="http_referrer" value={{url($crud->route) }}>
 
+<!-- Tab panes -->
 {{-- See if we're using tabs --}}
 @if ($crud->tabsEnabled() && count($crud->getTabs()))
-    <div class="card">
-        <div class="card-body row">
     @include('skote::crud.inc.show_tabbed_fields')
     <input type="hidden" name="current_tab" value="{{ Str::slug($crud->getTabs()[0]) }}" />
-        </div>
-    </div>
 @else
   <div class="card">
     <div class="card-body row">
@@ -20,7 +17,7 @@
 
 {{-- Define blade stacks so css and js can be pushed from the fields to these sections. --}}
 
-@section('head-styles')
+@section('head-styles-after')
     <link rel="stylesheet" href="{{ asset('assets/vendor/skote/crud/css/crud.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/skote/crud/css/form.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/skote/crud/css/'.$action.'.css') }}">
@@ -160,6 +157,7 @@
 
       if (window.location.hash) {
           $("input[name='current_tab']").val(window.location.hash.substr(1));
+          $('ul.nav a[href="#tab_' + window.location.hash.substr(1) + '"]').trigger('click');
       }
 
       });

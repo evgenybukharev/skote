@@ -5,9 +5,11 @@
         <script src="{{ URL::asset('assets/vendor/skote/libs/simplebar/simplebar.min.js')}}"></script>
         <script src="{{ URL::asset('assets/vendor/skote/libs/node-waves/node-waves.min.js')}}"></script>
 
+        @yield('script')
         @stack('script')
 
         <!-- App js -->
         <script src="{{ URL::asset('assets/vendor/skote/js/app.min.js')}}"></script>
 
+        @yield('script-bottom')
         @stack('script-bottom')

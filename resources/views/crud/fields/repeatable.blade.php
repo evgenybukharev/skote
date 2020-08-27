@@ -26,7 +26,7 @@
 <div class="container-repeatable-elements">
     <div data-repeatable-holder="{{ $field['name'] }}"></div>
 
-    @push('before_scripts')
+    @push('script-bottom')
     <div class="col-md-12 well repeatable-element row m-1 p-2" data-repeatable-identifier="{{ $field['name'] }}">
       @if (isset($field['fields']) && is_array($field['fields']) && count($field['fields']))
         <button type="button" class="close delete-element"><span aria-hidden="true">×</span></button>
