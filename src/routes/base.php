@@ -10,12 +10,17 @@
 |
 */
 
-Route::group(
-[
-    'namespace'  => 'EvgenyBukharev\Skote\Crud\Controllers',
-    'middleware' => 'web',
-    'prefix'     => 'admin',
-],
-function () {
+$routes=function () {
+    // Auth
+    if (config('skote.base.setup_auth_routes')) {
+        Route::get('login', 'LoginController@showLoginForm')->name('admin.login');
+        Route::post('login', 'LoginController@login');
+        Route::post('logout', 'LoginController@logout')->name('admin.logout');
+    }
+};
 
-});
+Route::group([
+    'namespace'  => 'EvgenyBukharev\Skote\Http\Controllers',
+    'middleware' =>  config('skote.base.web_middleware', 'web'),
+    'prefix' => 'admin',
+],$routes);
