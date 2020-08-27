@@ -12,7 +12,7 @@
 @endphp
 
 @include('skote::crud.fields.inc.wrapper_start')
-    <label>{!! $field['label'] !!}</label>
+    <label class="control-label">{!! $field['label'] !!}</label>
     @include('skote::crud.fields.inc.translatable_icon')
     <textarea
         name="{{ $field['name'] }}"
@@ -38,7 +38,8 @@
 
     {{-- FIELD JS - will be loaded in the after_scripts section --}}
     @push('crud_fields_scripts')
-        <script src="{{ asset('assets/vendor/skote/libs/ckeditor/ckeditor.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/skote/libs/ckeditor/ckeditor.js') }}"></script>
+        <script src="{{ asset('assets/vendor/skote/libs/ckeditor/adapters/jquery.js') }}"></script>
         <script>
             function bpFieldInitCKEditorElement(element) {
 
@@ -59,7 +60,6 @@
                     CKEDITOR.instances[$ck_instance_name].destroy(true);
                 });
                 // trigger a new CKEditor
-                console.info(element.data('options'));
                 element.ckeditor(element.data('options'));
             }
         </script>

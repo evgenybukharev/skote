@@ -10,7 +10,7 @@ if (isset($field['value']) && (is_array($field['value']) || is_object($field['va
 ?>
 
 @include('skote::crud.fields.inc.wrapper_start')
-    <label>{!! $field['label'] !!}</label>
+    <label class="control-label">{!! $field['label'] !!}</label>
     @include('skote::crud.fields.inc.translatable_icon')
     <input type="hidden"
            value="{{ old($field['name']) ? old($field['name']) : (isset($field['value']) ? $field['value'] : (isset($field['default']) ? $field['default'] : '' )) }}"

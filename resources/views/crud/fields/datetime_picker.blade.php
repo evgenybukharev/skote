@@ -12,7 +12,7 @@ if (isset($field['value']) && ($field['value'] instanceof \Carbon\CarbonInterfac
 
 @include('skote::crud.fields.inc.wrapper_start')
     <input type="hidden" class="form-control" name="{{ $field['name'] }}" value="{{ old(square_brackets_to_dots($field['name'])) ?? $field['value'] ?? $field['default'] ?? '' }}">
-    <label>{!! $field['label'] !!}</label>
+    <label class="control-label">{!! $field['label'] !!}</label>
     @include('skote::crud.fields.inc.translatable_icon')
     <div class="input-group date">
         <input

@@ -1,6 +1,6 @@
 <!-- select from array -->
 @include('skote::crud.fields.inc.wrapper_start')
-    <label>{!! $field['label'] !!}</label>
+    <label class="control-label">{!! $field['label'] !!}</label>
     @include('skote::crud.fields.inc.translatable_icon')
     <select
         name="{{ $field['name'] }}@if (isset($field['allows_multiple']) && $field['allows_multiple']==true)[]@endif"

@@ -16,7 +16,7 @@
 
 @include('skote::crud.fields.inc.wrapper_start')
     <input type="hidden" class="form-control" name="{{ $field['name'] }}" value="{{ $field['value'] }}">
-    <label>{!! $field['label'] !!}</label>
+    <label class="control-label">{!! $field['label'] !!}</label>
     @include('skote::crud.fields.inc.translatable_icon')
     <div class="input-group date">
         <input

@@ -28,7 +28,7 @@ if($sortable){
 
 @include('skote::crud.fields.inc.wrapper_start')
 
-    <div><label>{!! $field['label'] !!}</label></div>
+    <div><label class="control-label">{!! $field['label'] !!}</label></div>
     @include('skote::crud.fields.inc.translatable_icon')
     <div class="list" data-field-name="{{ $field['name'] }}">
     @if ($multiple)

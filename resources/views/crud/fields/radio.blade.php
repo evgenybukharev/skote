@@ -13,7 +13,7 @@
 @include('skote::crud.fields.inc.wrapper_start')
 
     <div>
-        <label>{!! $field['label'] !!}</label>
+        <label class="control-label">{!! $field['label'] !!}</label>
         @include('skote::crud.fields.inc.translatable_icon')
     </div>
 

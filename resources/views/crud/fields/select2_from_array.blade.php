@@ -1,6 +1,6 @@
 <!-- select2 from array -->
 @include('skote::crud.fields.inc.wrapper_start')
-    <label>{!! $field['label'] !!}</label>
+    <label class="control-label">{!! $field['label'] !!}</label>
     <select
         name="{{ $field['name'] }}@if (isset($field['allows_multiple']) && $field['allows_multiple']==true)[]@endif"
         style="width: 100%"
