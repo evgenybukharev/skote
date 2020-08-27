@@ -22,10 +22,6 @@ var third_party_assets = {
                 "./node_modules/noty/lib/noty.css",
                 "./node_modules/noty/lib/themes/relax.css"
             ]},
-        {"name": "ckeditor", "assets": [
-                "./node_modules/ckeditor/ckeditor.js",
-                "./node_modules/ckeditor/adapters/jquery.js",
-            ]},
         {
             "name": "select2",
             "assets": ["./node_modules/select2/dist/js/select2.min.js", "./node_modules/select2/dist/css/select2.min.css"]
@@ -88,3 +84,4 @@ mix.sass(folder.src + '/scss/app.scss', folder.dist_assets + "css").minify(folde
 mix.copyDirectory(folder.src + "/fonts", folder.dist_assets + "fonts");
 mix.copyDirectory(folder.src + "/images", folder.dist_assets + "images");
 mix.copyDirectory(folder.src + "/crud", folder.dist_assets + "crud");
+mix.copyDirectory("./node_modules/ckeditor", folder.dist_assets + "libs/ckeditor");
