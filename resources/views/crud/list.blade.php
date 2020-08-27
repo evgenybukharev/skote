@@ -149,7 +149,7 @@
     @stack('crud_list_styles')
 @endsection
 
-@section('script-bottom')
+@push('script-bottom')
     @include('skote::crud.inc.datatables_logic')
     <script src="{{ asset('assets/vendor/skote/crud/js/crud.js') }}"></script>
     <script src="{{ asset('assets/vendor/skote/crud/js/form.js') }}"></script>
@@ -157,4 +157,4 @@
 
     <!-- CRUD LIST CONTENT - crud_list_scripts stack -->
     @stack('crud_list_scripts')
-@endsection
+@endpush

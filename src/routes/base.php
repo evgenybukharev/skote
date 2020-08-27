@@ -22,5 +22,5 @@ $routes=function () {
 Route::group([
     'namespace'  => 'EvgenyBukharev\Skote\Http\Controllers',
     'middleware' =>  config('skote.base.web_middleware', 'web'),
-    'prefix' => 'admin',
+    'prefix'     => config('skote.base.route_prefix'),
 ],$routes);

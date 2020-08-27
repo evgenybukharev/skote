@@ -78,7 +78,6 @@ class CrudController extends Controller
     protected function setupDefaults()
     {
         preg_match_all('/(?<=^|;)setup([^;]+?)Defaults(;|$)/', implode(';', get_class_methods($this)), $matches);
-
         if (count($matches[1])) {
             foreach ($matches[1] as $methodName) {
                 $this->{'setup'.$methodName.'Defaults'}();

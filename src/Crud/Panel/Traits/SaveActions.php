@@ -3,8 +3,10 @@
 namespace EvgenyBukharev\Skote\Crud\Panel\Traits;
 
 use Alert;
+use Dotenv\Result\Success;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Session;
 use Redirect;
 use Request;
 
@@ -317,7 +319,7 @@ trait SaveActions
             $showBubble &&
             session($this->getCurrentOperation().'.saveAction', 'save_and_back') !== $saveAction
         ) {
-            Alert::info(trans('skote::crud.save_action_changed_notification'))->flash();
+            Session::flash('info',trans('skote::crud.save_action_changed_notification'));
         }
 
         session([$this->getCurrentOperation().'.saveAction' => $saveAction]);

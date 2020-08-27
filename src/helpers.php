@@ -21,3 +21,37 @@ if (! function_exists('mb_ucfirst')) {
         return mb_strtoupper($firstChar, $encoding).$then;
     }
 }
+
+if (! function_exists('square_brackets_to_dots')) {
+    /**
+     * Turns a string from bracket-type array to dot-notation array.
+     * Ex: array[0][property] turns into array.0.property.
+     *
+     * @param $path
+     *
+     * @return string
+     */
+    function square_brackets_to_dots($string)
+    {
+        $string = str_replace(['[', ']'], ['.', ''], $string);
+
+        return $string;
+    }
+}
+
+if (! function_exists('skote_url')) {
+    /**
+     * Appends the configured backpack prefix and returns
+     * the URL using the standard Laravel helpers.
+     *
+     * @param $path
+     *
+     * @return string
+     */
+    function skote_url($path = null, $parameters = [], $secure = null)
+    {
+        $path = ! $path || (substr($path, 0, 1) == '/') ? $path : '/'.$path;
+
+        return url(config('skote.base.route_prefix', 'admin').$path, $parameters, $secure);
+    }
+}
