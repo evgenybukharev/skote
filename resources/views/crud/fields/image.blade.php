@@ -65,7 +65,7 @@
     </div>
     <div class="btn-group">
         <div class="btn btn-light btn-sm btn-file">
-            {{ trans('backpack::crud.choose_file') }} <input type="file" accept="image/*" data-handle="uploadImage"  @include('skote::crud.fields.inc.attributes')>
+            {{ trans('skote::crud.choose_file') }} <input type="file" accept="image/*" data-handle="uploadImage"  @include('skote::crud.fields.inc.attributes')>
             <input type="hidden" data-handle="hiddenImage" name="{{ $field['name'] }}" value="{{ $value }}">
         </div>
         @if(isset($field['crop']) && $field['crop'])
@@ -75,7 +75,7 @@
         <button class="btn btn-light btn-sm" data-handle="zoomOut" type="button" style="display: none;"><i class="la la-search-minus"></i></button>
         <button class="btn btn-light btn-sm" data-handle="reset" type="button" style="display: none;"><i class="la la-times"></i></button>
         @endif
-        <button class="btn btn-light btn-sm" data-handle="remove" type="button"><i class="la la-trash"></i></button>
+        <button class="btn btn-light btn-sm" data-handle="remove" type="button"><i class="bx bx-trash-alt"></i></button>
     </div>
 
     {{-- HINT --}}
@@ -263,7 +263,7 @@
                         } else {
                             new Noty({
                                 type: "error",
-                                text: "<strong>Please choose an image file</strong><br>The file you've chosen does not look like an image."
+                                text: "<strong>Пожалуйста выберите изображение</strong><br>Выбранный файл не является изображением"
                             }).show();
                         }
                     });

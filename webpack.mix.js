@@ -26,6 +26,14 @@ var third_party_assets = {
             "name": "select2",
             "assets": ["./node_modules/select2/dist/js/select2.min.js", "./node_modules/select2/dist/css/select2.min.css"]
         },
+        {
+            "name": "cropperjs",
+            "assets": ["./node_modules/cropperjs/dist/cropper.min.js", "./node_modules/cropperjs/dist/cropper.min.css"]
+        },
+        {
+            "name": "jquery-cropper",
+            "assets": ["./node_modules/jquery-cropper/dist/jquery-cropper.min.js"]
+        },
         {"name": "jquery-repeater", "assets": ["./node_modules/jquery.repeater/jquery.repeater.min.js"]},
         {"name": "jquery-validation", "assets": [
                 "./node_modules/jquery-validation/dist/jquery.validate.js",

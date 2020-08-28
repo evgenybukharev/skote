@@ -18,6 +18,8 @@
         "cross-env": "^7.0",
         "jquery": "3.4.1",
         "ckeditor": "^4.12.1",
+        "cropperjs": "^1.5.7",
+        "jquery-cropper": "^1.0.1",
         "jquery.repeater": "^1.2.1",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.13",
