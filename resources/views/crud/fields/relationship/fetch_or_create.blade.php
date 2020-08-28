@@ -150,7 +150,7 @@ if($activeInlineCreate) {
         @push('crud_fields_styles')
 
             <!-- include select2 css-->
-            <link href="{{ asset('packages/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('assets/vendor/skote/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
             <link href="{{ asset('packages/select2-bootstrap-theme/dist/select2-bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         @endpush
 
@@ -158,8 +158,8 @@ if($activeInlineCreate) {
         @push('crud_fields_scripts')
 
             <!-- include select2 js-->
-            <script src="{{ asset('packages/select2/dist/js/select2.full.min.js') }}"></script>
-            @if (app()->getLocale() !== 'en')
+            <script src="{{ asset('assets/vendor/skote/libs/select2/select2.min.js') }}"></script>
+            @if (false && app()->getLocale() !== 'en')
             <script src="{{ asset('packages/select2/dist/js/i18n/' . app()->getLocale() . '.js') }}"></script>
             @endif
             <script>

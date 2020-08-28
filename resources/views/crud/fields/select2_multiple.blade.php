@@ -22,7 +22,7 @@
         data-init-function="bpFieldInitSelect2MultipleElement"
         data-select-all="{{ var_export($field['select_all'] ?? false)}}"
         data-options-for-js="{{json_encode(array_values($options_ids_array))}}"
-        @include('skote::crud.fields.inc.attributes', ['default_class' =>  'form-control select2_multiple'])
+        @include('skote::crud.fields.inc.attributes', ['default_class' =>  'select2 form-control select2_multiple'])
         {{ $field['multiple'] ? 'multiple' : '' }}>
 
         @if (isset($field['allows_null']) && $field['allows_null']==true)
@@ -41,8 +41,8 @@
     </select>
 
     @if(isset($field['select_all']) && $field['select_all'])
-        <a class="btn btn-xs btn-default select_all" style="margin-top: 5px;"><i class="la la-check-square-o"></i> {{ trans('backpack::crud.select_all') }}</a>
-        <a class="btn btn-xs btn-default clear" style="margin-top: 5px;"><i class="la la-times"></i> {{ trans('backpack::crud.clear') }}</a>
+        <a class="btn btn-xs btn-default select_all" style="margin-top: 5px;"><i class="la la-check-square-o"></i> {{ trans('skote::crud.select_all') }}</a>
+        <a class="btn btn-xs btn-default clear" style="margin-top: 5px;"><i class="la la-times"></i> {{ trans('skote::crud.clear') }}</a>
     @endif
 
     {{-- HINT --}}
@@ -63,15 +63,14 @@
     {{-- FIELD CSS - will be loaded in the after_styles section --}}
     @push('crud_fields_styles')
         <!-- include select2 css-->
-        <link href="{{ asset('packages/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('packages/select2-bootstrap-theme/dist/select2-bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/vendor/skote/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
     @endpush
 
     {{-- FIELD JS - will be loaded in the after_scripts section --}}
     @push('crud_fields_scripts')
         <!-- include select2 js-->
-        <script src="{{ asset('packages/select2/dist/js/select2.full.min.js') }}"></script>
-        @if (app()->getLocale() !== 'en')
+        <script src="{{ asset('assets/vendor/skote/libs/select2/select2.min.js') }}"></script>
+        @if (false && app()->getLocale() !== 'en')
         <script src="{{ asset('packages/select2/dist/js/i18n/' . app()->getLocale() . '.js') }}"></script>
         @endif
         <script>
@@ -81,7 +80,7 @@
                 if (!element.hasClass("select2-hidden-accessible"))
                     {
                         var $obj = element.select2({
-                            theme: "bootstrap"
+                            theme: "default"
                         });
 
                         //get options ids stored in the field.
