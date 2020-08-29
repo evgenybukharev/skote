@@ -80,7 +80,7 @@ $field['wrapper']['data-field-name'] = $field['name'];
     </table>
 
     <div class="array-controls btn-group m-t-10">
-        <button class="btn btn-sm btn-light" type="button" data-button-type="addItem"><i class="la la-plus"></i> {{trans('skote::crud.add')}} {{ $item_name }}</button>
+        <button class="btn btn-sm btn-light" type="button" data-button-type="addItem"><i class="la la-plus"></i> {{$field['new_item_label'] ??trans('skote::crud.add').' '. $item_name}}</button>
     </div>
 
 </div>
