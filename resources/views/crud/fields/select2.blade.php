@@ -74,7 +74,7 @@
                 // element will be a jQuery wrapped DOM node
                 if (!element.hasClass("select2-hidden-accessible")) {
                     element.select2({
-                        theme: "bootstrap"
+                        theme: "default"
                     });
                 }
             }

@@ -602,7 +602,7 @@ function bpFieldInitFetchOrCreateElement(element) {
 
 
                     element.select2({
-                    theme: "bootstrap",
+                    theme: "default",
                     placeholder: $placeholder,
                     minimumInputLength: $minimumInputLength,
                     allowClear: $allows_null,
