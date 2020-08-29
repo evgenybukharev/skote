@@ -151,7 +151,6 @@ if($activeInlineCreate) {
 
             <!-- include select2 css-->
             <link href="{{ asset('assets/vendor/skote/libs/select2/select2.min.css') }}" rel="stylesheet" type="text/css" />
-            <link href="{{ asset('packages/select2-bootstrap-theme/dist/select2-bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         @endpush
 
         {{-- FIELD JS - will be loaded in the after_scripts section --}}
@@ -602,7 +601,7 @@ function bpFieldInitFetchOrCreateElement(element) {
 
 
                     element.select2({
-                    theme: "default",
+                    theme: "bootstrap",
                     placeholder: $placeholder,
                     minimumInputLength: $minimumInputLength,
                     allowClear: $allows_null,

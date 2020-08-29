@@ -23,8 +23,6 @@
   },
   "require": {
     "laravel/framework": "^7.0",
-    "php": ">=7.0",
-    "intervention/image": "^2.5",
-    "jenssegers/date": "^4.0"
+    "php": ">=7.0"
   }
 }

@@ -40,8 +40,8 @@
             value="{{ $items }}"
             data-max="{{$max}}"
             data-min="{{$min}}"
-            data-maxErrorTitle="{{trans('backpack::crud.table_cant_add', ['entity' => $item_name])}}"
-            data-maxErrorMessage="{{trans('backpack::crud.table_max_reached', ['max' => $max])}}">
+            data-maxErrorTitle="{{trans('skote::crud.table_cant_add', ['entity' => $item_name])}}"
+            data-maxErrorMessage="{{trans('skote::crud.table_max_reached', ['max' => $max])}}">
 
     <div class="array-container form-group">
 
@@ -68,10 +68,10 @@
                     </td>
                     @endforeach
                     <td>
-                        <span class="btn btn-sm btn-light sort-handle pull-right"><span class="sr-only">sort item</span><i class="la la-sort" role="presentation" aria-hidden="true"></i></span>
+                        <span class="btn btn-sm btn-light sort-handle pull-right"><span class="sr-only">sort item</span><i class="fas fa-sort" role="presentation" aria-hidden="true"></i></span>
                     </td>
                     <td>
-                        <button class="btn btn-sm btn-light removeItem" type="button"><span class="sr-only">delete item</span><i class="la la-trash" role="presentation" aria-hidden="true"></i></button>
+                        <button class="btn btn-sm btn-light removeItem" type="button"><span class="sr-only">delete item</span><i class="fas fa-trash" role="presentation" aria-hidden="true"></i></button>
                     </td>
                 </tr>
 
@@ -80,7 +80,7 @@
         </table>
 
         <div class="array-controls btn-group m-t-10">
-            <button class="btn btn-sm btn-light" type="button" data-button-type="addItem"><i class="la la-plus"></i> {{trans('backpack::crud.add')}} {{ $item_name }}</button>
+            <button class="btn btn-sm btn-light" type="button" data-button-type="addItem"><i class="la la-plus"></i> {{trans('skote::crud.add')}} {{ $item_name }}</button>
         </div>
 
     </div>

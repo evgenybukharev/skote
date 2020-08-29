@@ -24,19 +24,19 @@
                         @case('link-block')
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="{{$item['icon']}}"></i>
+                                <i class="{{$item['icon']??''}}"></i>
                                 <span>{{$item['title']}}</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
                                 @foreach($item['links'] as $subItem)
-                                <li><a href="{{$subItem['href']}}">{{$subItem['title']}}</a></li>
+                                <li><a href="{{$subItem['href']}}" data-active-regex="{{$subItem['active-regex']??''}}">{{$subItem['title']}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
                         @break
                         @case('link')
                         <li>
-                            <a href="{{$item['href']}}" class="waves-effect">
+                            <a href="{{$item['href']}}" class="waves-effect" data-active-regex="{{$item['active-regex']??''}}">
                                 <i class="{{$item['icon']}}"></i>
                                 <span>{{$item['title']}}</span>
                             </a>
@@ -50,3 +50,22 @@
     </div>
 </div>
 <!-- Left Sidebar End -->
+
+@push('script')
+    <script>
+        $("#sidebar-menu a").each(function () {
+            var pageUrl = window.location.href.split(/[?#]/)[0];
+            var activeRegex=$(this).data('active-regex');
+
+            if (this.href == pageUrl || (activeRegex!==undefined && activeRegex!=='' && new RegExp(activeRegex).test(pageUrl)) ) {
+                $(this).addClass("active");
+                $(this).parent().addClass("mm-active"); // add active to li of the current link
+                $(this).parent().parent().addClass("mm-show");
+                $(this).parent().parent().prev().addClass("mm-active"); // add active class to an anchor
+                $(this).parent().parent().parent().addClass("mm-active");
+                $(this).parent().parent().parent().parent().addClass("mm-show"); // add active to li of the current link
+                $(this).parent().parent().parent().parent().parent().addClass("mm-active");
+            }
+        });
+    </script>
+@endpush

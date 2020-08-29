@@ -24,7 +24,6 @@
 @push('crud_list_styles')
     <!-- include select2 css-->
     <link href="{{ asset('packages/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('packages/select2-bootstrap-theme/dist/select2-bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <style>
 	  .form-inline .select2-container {
 	    display: inline-block;

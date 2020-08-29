@@ -93,7 +93,7 @@
             var arr = [];
             var obj = {};
 
-            var container = $('[data-repeatable-holder={{ $field['name'] }}]');
+            var container = $('[data-repeatable-holder='+container_name+']');
 
             container.find('.well').each(function () {
                 $(this).find('input, select, textarea').each(function () {
@@ -143,7 +143,6 @@
             element.parent().find('.add-repeatable-element-button').click(function(){
                 newRepeatableElement(container, field_group_clone);
             });
-
             if (element.val()) {
                 var repeatable_fields_values = JSON.parse(element.val());
 
@@ -151,7 +150,7 @@
                     newRepeatableElement(container, field_group_clone, repeatable_fields_values[i]);
                 }
             } else {
-                element.parent().find('.add-repeatable-element-button').trigger('click');
+                // element.parent().find('.add-repeatable-element-button').trigger('click');
             }
 
             if (element.closest('.modal-content').length) {
