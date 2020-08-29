@@ -2,7 +2,6 @@
 namespace EvgenyBukharev\Skote\Traits;
 
 use DomainException;
-use http\Exception\InvalidArgumentException;
 use Illuminate\Support\Facades\Storage;
 use Image;
 
