@@ -31,6 +31,10 @@ var third_party_assets = {
             "assets": ["./node_modules/cropperjs/dist/cropper.min.js", "./node_modules/cropperjs/dist/cropper.min.css"]
         },
         {
+            "name": "jquery-ui-dist",
+            "assets": ["./node_modules/jquery-ui-dist/jquery-ui.min.js"]
+        },
+        {
             "name": "jquery-cropper",
             "assets": ["./node_modules/jquery-cropper/dist/jquery-cropper.min.js"]
         },
