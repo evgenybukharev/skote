@@ -23,7 +23,9 @@
         // === following js will activate the menu in left side bar based on url ====
         $("#sidebar-menu a").each(function () {
             var pageUrl = window.location.href.split(/[?#]/)[0];
-            if (this.href == pageUrl) {
+            var activeRegex=$(this).data('active-regex');
+
+            if (this.href == pageUrl || (activeRegex!==undefined && activeRegex!=='' && new RegExp(activeRegex).test(pageUrl)) ) {
                 $(this).addClass("active");
                 $(this).parent().addClass("mm-active"); // add active to li of the current link
                 $(this).parent().parent().addClass("mm-show");
