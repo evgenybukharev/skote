@@ -1,1 +1,1 @@
-@include('skote::crud.fields.address_algolia')
+@include('skote::crud.fields.address_dadata')
