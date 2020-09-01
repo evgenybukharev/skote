@@ -17,6 +17,7 @@
     "/libs/jquery-repeater/jquery-repeater.min.js": "/libs/jquery-repeater/jquery-repeater.min.js",
     "/libs/jquery-validation/jquery-validation.min.js": "/libs/jquery-validation/jquery-validation.min.js",
     "/libs/slugify/slugify.min.js": "/libs/slugify/slugify.min.js",
+    "/libs/places.js/places.js.min.js": "/libs/places.js/places.js.min.js",
     "/libs/datatables/datatables.min.js": "/libs/datatables/datatables.min.js",
     "/libs/datatables/datatables.min.css": "/libs/datatables/datatables.min.css",
     "/css/app.min.css": "/css/app.min.css"

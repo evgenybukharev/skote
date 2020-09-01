@@ -45,6 +45,7 @@ var third_party_assets = {
                 "./node_modules/jquery-validation/dist/localization/messages_ru.js"
             ]},
         {"name": "slugify", "assets": ["./node_modules/slugify/slugify.js"]},
+        {"name": "places.js", "assets": ["./node_modules/places.js/dist/cdn/places.min.js"]},
         {
             "name": "datatables", "assets": [
                 "./node_modules/datatables.net/js/jquery.dataTables.min.js",
