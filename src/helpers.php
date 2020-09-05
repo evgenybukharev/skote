@@ -50,8 +50,54 @@ if (! function_exists('skote_url')) {
      */
     function skote_url($path = null, $parameters = [], $secure = null)
     {
-        $path = ! $path || (substr($path, 0, 1) == '/') ? $path : '/'.$path;
+        $path = !$path || (substr($path, 0, 1) == '/') ? $path : '/' . $path;
 
-        return url(config('skote.base.route_prefix', 'admin').$path, $parameters, $secure);
+        return url(config('skote.base.route_prefix', 'admin') . $path, $parameters, $secure);
+    }
+}
+
+if (!function_exists('is_debug')) {
+    /**
+     * @return bool
+     */
+    function is_debug(): bool
+    {
+        return config('app.debug') == true;
+    }
+}
+if (!function_exists('is_env_production')) {
+    /**
+     * @return bool
+     */
+    function is_env_production(): bool
+    {
+        return in_array(config('app.env'), ['production', 'prod']);
+    }
+}
+if (!function_exists('is_env_local')) {
+    /**
+     * @return bool
+     */
+    function is_env_local(): bool
+    {
+        return in_array(config('app.env'), ['local']);
+    }
+}
+if (!function_exists('is_env_dev')) {
+    /**
+     * @return bool
+     */
+    function is_env_dev(): bool
+    {
+        return in_array(config('app.env'), ['dev','development']);
+    }
+}
+if (!function_exists('is_env_stage')) {
+    /**
+     * @return bool
+     */
+    function is_env_stage(): bool
+    {
+        return in_array(config('app.env'), ['stage']);
     }
 }
