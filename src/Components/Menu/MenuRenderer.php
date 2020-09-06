@@ -25,7 +25,7 @@ class MenuRenderer implements MenuRendererInterface
                     ['title' => 'Список', 'href' => ''],
                 ],
             ],
-            ['title' => 'Файловый менеджер', 'icon' => 'bx bxs-folder-open', 'type' => 'link', 'href' => 'admin/elfinder'],
+            ['title' => 'Файловый менеджер', 'icon' => 'bx bxs-folder-open', 'type' => 'link', 'href' => '/admin/elfinder'],
             ['title' => 'Настройки', 'icon' => 'bx bx-file', 'type' => 'link', 'href' => route(config('skote.url.settings', 'settings'))],
         ];
     }
