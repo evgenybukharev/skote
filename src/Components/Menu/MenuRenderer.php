@@ -21,11 +21,12 @@ class MenuRenderer implements MenuRendererInterface
                 'type' => 'link-block',
                 'icon' => 'bx bx-file',
                 'links' => [
-                    ['title'=>'Список','href'=>''],
-                    ['title'=>'Список','href'=>''],
+                    ['title' => 'Список', 'href' => ''],
+                    ['title' => 'Список', 'href' => ''],
                 ],
             ],
-            ['title' => 'Настройки', 'icon'=>'bx bx-file','type' => 'link','href'=>route(config('skote.url.settings', 'settings'))],
+            ['title' => 'Файловый менеджер', 'icon' => 'bx bxs-folder-open', 'type' => 'link', 'href' => 'admin/elfinder'],
+            ['title' => 'Настройки', 'icon' => 'bx bx-file', 'type' => 'link', 'href' => route(config('skote.url.settings', 'settings'))],
         ];
     }
 }
