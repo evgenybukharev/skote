@@ -65,6 +65,10 @@ class SkoteServiceProvider extends ServiceProvider
         $this->loadHelpers();
 
         $this->registerViewComposers($view);
+
+        if ($this->app->runningInConsole()) {
+            $this->bootForConsole();
+        }
     }
 
     /**
@@ -166,11 +170,11 @@ class SkoteServiceProvider extends ServiceProvider
      */
     private function publishConfig()
     {
-        $configPath = $this->packagePath('config/skote.php');
+        $this->publishes([$this->packagePath('config/skote.php') => config_path('skote.php')], 'config');
+        $this->publishes([$this->packagePath('config/elfinder.php') => config_path('elfinder.php')], 'config');
 
-        $this->publishes([$configPath => config_path('skote.php')], 'config');
-
-        $this->mergeConfigFrom($configPath, 'adminlte');
+        $this->mergeConfigFrom($this->packagePath('config/skote.php'), 'skote');
+        $this->mergeConfigFrom($this->packagePath('config/elfinder.php'), 'elfinder');
     }
 
     /**
@@ -197,5 +201,23 @@ class SkoteServiceProvider extends ServiceProvider
     private function registerViewComposers(Factory $view)
     {
         $view->composer('skote::page', SkoteComposer::class);
+    }
+
+
+    /**
+     * Console-specific booting.
+     *
+     * @return void
+     */
+    protected function bootForConsole()
+    {
+
+        // Registering package commands.
+        $this->commands($this->commands);
+
+        // Mapping the elfinder prefix, if missing
+        if (! Config::get('elfinder.route.prefix')) {
+            Config::set('elfinder.route.prefix', Config::get('skote.base.route_prefix').'/elfinder');
+        }
     }
 }
