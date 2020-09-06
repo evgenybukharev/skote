@@ -1,70 +1,70 @@
 @php
-$multiple = Arr::get($field, 'multiple', true);
-$sortable = Arr::get($field, 'sortable', false);
-$value = old(square_brackets_to_dots($field['name'])) ?? $field['value'] ?? $field['default'] ?? '';
+    $multiple = Arr::get($field, 'multiple', true);
+    $sortable = Arr::get($field, 'sortable', false);
+    $value = old(square_brackets_to_dots($field['name'])) ?? $field['value'] ?? $field['default'] ?? '';
 
-if (!$multiple && is_array($value)) {
-    $value = Arr::first($value);
-}
+    if (!$multiple && is_array($value)) {
+        $value = Arr::first($value);
+    }
 
-$field['wrapper'] = $field['wrapperAttributes'] ?? [];
-$field['wrapper']['data-init-function'] = $field['wrapper']['data-init-function'] ?? 'bpFieldInitBrowseMultipleElement';
-$field['wrapper']['data-elfinder-trigger-url'] = $field['wrapper']['data-elfinder-trigger-url'] ?? url(config('elfinder.route.prefix').'/popup/'.$field['name'].'?multiple=1');
+    $field['wrapper'] = $field['wrapperAttributes'] ?? [];
+    $field['wrapper']['data-init-function'] = $field['wrapper']['data-init-function'] ?? 'bpFieldInitBrowseMultipleElement';
+    $field['wrapper']['data-elfinder-trigger-url'] = $field['wrapper']['data-elfinder-trigger-url'] ?? url(config('elfinder.route.prefix').'/popup/'.$field['name'].'?multiple=1');
 
-if (isset($field['mime_types'])) {
-    $field['wrapper']['data-elfinder-trigger-url'] .= '&mimes='.urlencode(serialize($field['mime_types']));
-}
+    if (isset($field['mime_types'])) {
+        $field['wrapper']['data-elfinder-trigger-url'] .= '&mimes='.urlencode(serialize($field['mime_types']));
+    }
 
-if ($multiple) {
-    $field['wrapper']['data-multiple'] = "true";
-} else {
-    $field['wrapper']['data-multiple'] = "false";
-}
+    if ($multiple) {
+        $field['wrapper']['data-multiple'] = "true";
+    } else {
+        $field['wrapper']['data-multiple'] = "false";
+    }
 
-if($sortable){
-    $field['wrapper']['sortable'] = "true";
-}
+    if($sortable){
+        $field['wrapper']['sortable'] = "true";
+    }
 @endphp
 
 @include('skote::crud.fields.inc.wrapper_start')
 
-    <div><label class="control-label">{!! $field['label'] !!}</label></div>
-    @include('skote::crud.fields.inc.translatable_icon')
-    <div class="list" data-field-name="{{ $field['name'] }}">
+<div><label class="control-label">{!! $field['label'] !!}</label></div>
+@include('skote::crud.fields.inc.translatable_icon')
+<div class="list" data-field-name="{{ $field['name'] }}">
     @if ($multiple)
         <input type="hidden" data-marker="multipleBrowseInput" name="{{ $field['name'] }}" value="{{ json_encode($value) }}">
     @else
         <input type="text" data-marker="multipleBrowseInput" name="{{ $field['name'] }}" value="{{ $value }}" @include('skote::crud.fields.inc.attributes') readonly>
     @endif
 </div>
-    <div class="btn-group" role="group" aria-label="..." style="margin-top: 3px;">
-        <button type="button" class="browse popup btn btn-sm btn-light">
-            <i class="bx bxs-cloud-upload"></i>
-            {{ trans('skote::crud.browse_uploads') }}
-        </button>
-        <button type="button" class="browse clear btn btn-sm btn-light">
-            <i class="bx bx-reset"></i>
-            {{ trans('skote::crud.clear') }}
-        </button>
-    </div>
+<div class="btn-group" role="group" aria-label="..." style="margin-top: 3px;">
+    <button type="button" class="browse popup btn btn-sm btn-light">
+        <i class="bx bxs-cloud-upload"></i>
+        {{ trans('skote::crud.browse_uploads') }}
+    </button>
+    <button type="button" class="browse clear btn btn-sm btn-light">
+        <i class="bx bx-reset"></i>
+        {{ trans('skote::crud.clear') }}
+    </button>
+</div>
 
-    @if (isset($field['hint']))
-        <p class="help-block">{!! $field['hint'] !!}</p>
-    @endif
+@if (isset($field['hint']))
+    <p class="help-block">{!! $field['hint'] !!}</p>
+@endif
 
-    <script type="text/html" data-marker="browse_multiple_template">
-        <div class="input-group input-group-sm">
-            <input type="text" @include('skote::crud.fields.inc.attributes') readonly>
-            <div class="input-group-btn">
-                <button type="button" class="browse remove btn btn-sm btn-light">
-                    <i class="la la-trash"></i>
-                </button>
-                @if($sortable)
-                    <button type="button" class="browse move btn btn-sm btn-light"><span class="la la-sort"></span></button>
-                @endif
-            </div>
+<script type="text/html" data-marker="browse_multiple_template">
+    <div class="input-group input-group-sm m-b-10">
+        <input type="text" @include('skote::crud.fields.inc.attributes') readonly>
+        <div class="input-group-btn">
+            <button type="button" class="browse remove btn btn-sm btn-light">
+                <i class="bx bx-trash"></i>
+            </button>
+            @if($sortable)
+                <button type="button" class="browse move btn btn-sm btn-light"><span class="la la-sort"></span></button>
+            @endif
         </div>
-    </script>
+    </div>
+</script>
 @include('skote::crud.fields.inc.wrapper_end')
 
 
