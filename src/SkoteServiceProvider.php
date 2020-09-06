@@ -13,9 +13,9 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Config;
 
 
 class SkoteServiceProvider extends ServiceProvider
@@ -218,12 +218,17 @@ class SkoteServiceProvider extends ServiceProvider
      */
     protected function bootForConsole()
     {
+        // Publishing the views.
+        $this->publishes([
+            __DIR__ . '/../resources/views/elfinder' => resource_path('views/vendor/elfinder'),
+        ], 'views');
+
         // Registering package commands.
         $this->commands($this->commands);
 
         // Mapping the elfinder prefix, if missing
-        if (! Config::get('elfinder.route.prefix')) {
-            Config::set('elfinder.route.prefix', Config::get('skote.base.route_prefix').'/elfinder');
+        if (!Config::get('elfinder.route.prefix')) {
+            Config::set('elfinder.route.prefix', Config::get('skote.base.route_prefix') . '/elfinder');
         }
     }
 }

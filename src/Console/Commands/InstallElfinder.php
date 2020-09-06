@@ -35,7 +35,7 @@ class InstallElfinder extends Command
      */
     public function handle()
     {
-        $this->progressBar = $this->output->createProgressBar(4);
+        $this->progressBar = $this->output->createProgressBar(3);
         $this->progressBar->minSecondsBetweenRedraws(0);
         $this->progressBar->maxSecondsBetweenRedraws(120);
         $this->progressBar->setRedrawFrequency(1);
