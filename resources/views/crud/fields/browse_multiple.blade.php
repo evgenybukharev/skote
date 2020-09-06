@@ -39,12 +39,12 @@ if($sortable){
 </div>
     <div class="btn-group" role="group" aria-label="..." style="margin-top: 3px;">
         <button type="button" class="browse popup btn btn-sm btn-light">
-            <i class="la la-cloud-upload"></i>
-            {{ trans('backpack::crud.browse_uploads') }}
+            <i class="bx bxs-cloud-upload"></i>
+            {{ trans('skote::crud.browse_uploads') }}
         </button>
         <button type="button" class="browse clear btn btn-sm btn-light">
-            <i class="la la-eraser"></i>
-            {{ trans('backpack::crud.clear') }}
+            <i class="bx bx-reset"></i>
+            {{ trans('skote::crud.clear') }}
         </button>
     </div>
 
