@@ -106,3 +106,4 @@ mix.copyDirectory(folder.src + "/fonts", folder.dist_assets + "fonts");
 mix.copyDirectory(folder.src + "/images", folder.dist_assets + "images");
 mix.copyDirectory(folder.src + "/crud", folder.dist_assets + "crud");
 mix.copyDirectory("./node_modules/ckeditor", folder.dist_assets + "libs/ckeditor");
+mix.copyDirectory("./node_modules/jquery-colorbox/example2/images", folder.dist_assets + "libs/jquery-colorbox/images");

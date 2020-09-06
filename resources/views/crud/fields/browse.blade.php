@@ -41,7 +41,7 @@
 	{{-- FIELD CSS - will be loaded in the after_styles section --}}
     @push('crud_fields_styles')
 		<!-- include browse server css -->
-		<link href="{{ asset('packages/jquery-colorbox/example2/colorbox.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('assets/vendor/skote/libs/jquery-colorbox/jquery-colorbox.min.css') }}" rel="stylesheet" type="text/css" />
 		<style>
 			#cboxContent, #cboxLoadedContent, .cboxIframe {
 				background: transparent;
@@ -51,7 +51,7 @@
 
     @push('crud_fields_scripts')
 		<!-- include browse server js -->
-		<script src="{{ asset('packages/jquery-colorbox/jquery.colorbox-min.js') }}"></script>
+		<script src="{{ asset('assets/vendor/skote/libs/jquery-colorbox/jquery-colorbox.min.js') }}"></script>
 		<script type="text/javascript">
 			// this global variable is used to remember what input to update with the file path
 			// because elfinder is actually loaded in an iframe by colorbox

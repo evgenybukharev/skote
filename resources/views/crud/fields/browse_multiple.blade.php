@@ -78,7 +78,7 @@ if($sortable){
 
     {{-- FIELD CSS - will be loaded in the after_styles section --}}
     @push('crud_fields_styles')
-        <link href="{{ asset('packages/jquery-colorbox/example2/colorbox.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/vendor/skote/libs/jquery-colorbox/jquery-colorbox.min.css') }}" rel="stylesheet" type="text/css" />
         <style>
             #cboxContent, #cboxLoadedContent, .cboxIframe {
                 background: transparent;
@@ -88,8 +88,8 @@ if($sortable){
 
     @push('crud_fields_scripts')
 
-        <script src="{{ asset('packages/jquery-ui-dist/jquery-ui.min.js') }}"></script>
-        <script src="{{ asset('packages/jquery-colorbox/jquery.colorbox-min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/skote/libs/jquery-ui-dist/jquery-ui-dist.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/skote/libs/jquery-colorbox/jquery-colorbox.min.js') }}"></script>
         <script>
             // this global variable is used to remember what input to update with the file path
             // because elfinder is actually loaded in an iframe by colorbox
