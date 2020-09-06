@@ -66,5 +66,6 @@ return [
     'confirm_email'        => 'Подтвеждение Email',
     'choose_new_password'  => 'Ввод нового пароля',
     'confirm_new_password' => 'Повторите новый пароль',
+    'file_manager' => 'Файловый менеджер',
 
 ];
