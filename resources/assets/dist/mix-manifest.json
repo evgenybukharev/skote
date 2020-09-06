@@ -1,6 +1,7 @@
 {
     "/js/app.min.js": "/js/app.min.js",
     "/css/app.css": "/css/app.css",
+    "/css/helper.css": "/css/helper.css",
     "/libs/jquery/jquery.min.js": "/libs/jquery/jquery.min.js",
     "/libs/bootstrap/bootstrap.min.js": "/libs/bootstrap/bootstrap.min.js",
     "/libs/metismenu/metismenu.min.js": "/libs/metismenu/metismenu.min.js",
@@ -20,5 +21,6 @@
     "/libs/places.js/places.js.min.js": "/libs/places.js/places.js.min.js",
     "/libs/datatables/datatables.min.js": "/libs/datatables/datatables.min.js",
     "/libs/datatables/datatables.min.css": "/libs/datatables/datatables.min.css",
-    "/css/app.min.css": "/css/app.min.css"
+    "/css/app.min.css": "/css/app.min.css",
+    "/css/helper.min.css": "/css/helper.min.css"
 }

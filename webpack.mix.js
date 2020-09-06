@@ -94,6 +94,7 @@ mix.copyDirectory("./node_modules/tinymce", folder.dist_assets + "/libs/tinymce"
 //Admin
 mix.js(folder.src + '/js/app.js', folder.dist_assets + 'js/app.min.js');
 mix.sass(folder.src + '/scss/app.scss', folder.dist_assets + "css").minify(folder.dist_assets + "css/app.css");
+mix.sass(folder.src + '/scss/helper.scss', folder.dist_assets + "css").minify(folder.dist_assets + "css/helper.css");
 mix.copyDirectory(folder.src + "/fonts", folder.dist_assets + "fonts");
 mix.copyDirectory(folder.src + "/images", folder.dist_assets + "images");
 mix.copyDirectory(folder.src + "/crud", folder.dist_assets + "crud");
