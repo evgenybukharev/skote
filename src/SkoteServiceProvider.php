@@ -2,9 +2,9 @@
 
 namespace EvgenyBukharev\Skote;
 
-use Illuminate\Support\Facades\App;
 use EvgenyBukharev\Skote\Components\Menu\MenuRenderer;
 use EvgenyBukharev\Skote\Components\Menu\MenuRendererInterface;
+use EvgenyBukharev\Skote\Console\Commands\InstallElfinder;
 use EvgenyBukharev\Skote\Crud\Panel\CrudPanel;
 use EvgenyBukharev\Skote\Http\ViewComposers\SkoteComposer;
 use Illuminate\Contracts\Config\Repository;
@@ -12,6 +12,7 @@ use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -19,6 +20,11 @@ use Illuminate\Support\ServiceProvider;
 class SkoteServiceProvider extends ServiceProvider
 {
     public $routeFilePath = '/routes/base.php';
+
+    protected $commands = [
+        InstallElfinder::class,
+    ];
+
     /**
      *
      */

@@ -6,7 +6,7 @@ namespace EvgenyBukharev\Skote\Console\Commands;
 use EvgenyBukharev\Skote\Console\Commands\Traits\PrettyCommandOutput;
 use Illuminate\Console\Command;
 
-class Install extends Command
+class InstallElfinder extends Command
 {
     use PrettyCommandOutput;
 
