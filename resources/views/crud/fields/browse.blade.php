@@ -42,11 +42,6 @@
     @push('crud_fields_styles')
 		<!-- include browse server css -->
 		<link href="{{ asset('assets/vendor/skote/libs/jquery-colorbox/jquery-colorbox.min.css') }}" rel="stylesheet" type="text/css" />
-		<style>
-			#cboxContent, #cboxLoadedContent, .cboxIframe {
-				background: transparent;
-			}
-		</style>
 	@endpush
 
     @push('crud_fields_scripts')

@@ -79,11 +79,6 @@ if($sortable){
     {{-- FIELD CSS - will be loaded in the after_styles section --}}
     @push('crud_fields_styles')
         <link href="{{ asset('assets/vendor/skote/libs/jquery-colorbox/jquery-colorbox.min.css') }}" rel="stylesheet" type="text/css" />
-        <style>
-            #cboxContent, #cboxLoadedContent, .cboxIframe {
-                background: transparent;
-            }
-        </style>
     @endpush
 
     @push('crud_fields_scripts')
