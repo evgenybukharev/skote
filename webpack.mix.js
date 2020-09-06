@@ -35,6 +35,13 @@ var third_party_assets = {
             "assets": ["./node_modules/jquery-ui-dist/jquery-ui.min.js"]
         },
         {
+            "name": "jquery-colorbox",
+            "assets": [
+                "./node_modules/jquery-colorbox/jquery.colorbox-min.js",
+                "./node_modules/jquery-colorbox/example2/colorbox.css",
+            ]
+        },
+        {
             "name": "jquery-cropper",
             "assets": ["./node_modules/jquery-cropper/dist/jquery-cropper.min.js"]
         },

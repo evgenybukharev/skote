@@ -14,6 +14,8 @@
     "/libs/cropperjs/cropperjs.min.js": "/libs/cropperjs/cropperjs.min.js",
     "/libs/cropperjs/cropperjs.min.css": "/libs/cropperjs/cropperjs.min.css",
     "/libs/jquery-ui-dist/jquery-ui-dist.min.js": "/libs/jquery-ui-dist/jquery-ui-dist.min.js",
+    "/libs/jquery-colorbox/jquery-colorbox.min.js": "/libs/jquery-colorbox/jquery-colorbox.min.js",
+    "/libs/jquery-colorbox/jquery-colorbox.min.css": "/libs/jquery-colorbox/jquery-colorbox.min.css",
     "/libs/jquery-cropper/jquery-cropper.min.js": "/libs/jquery-cropper/jquery-cropper.min.js",
     "/libs/jquery-repeater/jquery-repeater.min.js": "/libs/jquery-repeater/jquery-repeater.min.js",
     "/libs/jquery-validation/jquery-validation.min.js": "/libs/jquery-validation/jquery-validation.min.js",
