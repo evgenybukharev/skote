@@ -44,11 +44,11 @@ class InstallElfinder extends Command
         $this->line(' Creating uploads directory');
         switch (DIRECTORY_SEPARATOR) {
             case '/': // unix
-                $createUploadDirectoryCommand = ['mkdir', '-p', 'public/uploads'];
+                $createUploadDirectoryCommand = ['mkdir', '-p', 'storage/app/public/uploads'];
                 break;
             case '\\': // windows
                 if (!file_exists('public\uploads')) {
-                    $createUploadDirectoryCommand = ['mkdir', 'public\uploads'];
+                    $createUploadDirectoryCommand = ['mkdir', 'storage\app\public\uploads'];
                 }
                 break;
         }
