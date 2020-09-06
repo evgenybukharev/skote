@@ -218,7 +218,6 @@ class SkoteServiceProvider extends ServiceProvider
      */
     protected function bootForConsole()
     {
-
         // Registering package commands.
         $this->commands($this->commands);
 

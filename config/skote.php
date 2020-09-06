@@ -7,6 +7,7 @@ return [
         'web_middleware' => ['web'],
         'setup_auth_routes' => true,
         'route_prefix'=>'admin',
+        'middleware_key'=>'admin',
     ],
     'path' => [
         'logo-small' => '/assets/favicon-32x32.png',

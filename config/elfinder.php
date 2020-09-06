@@ -39,8 +39,8 @@ return [
     */
 
     'route' => [
-        'prefix'     => config('backpack.base.route_prefix', 'admin').'/elfinder',
-        'middleware' => ['web', config('backpack.base.middleware_key', 'admin')], //Set to null to disable middleware filter
+        'prefix'     => config('skote.base.route_prefix', 'admin').'/elfinder',
+        'middleware' => ['web', config('skote.base.middleware_key', 'admin')], //Set to null to disable middleware filter
     ],
 
     /*
