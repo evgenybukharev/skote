@@ -132,7 +132,7 @@
 @push('crud_fields_scripts')
 <script>
     // if nullable, make sure the Clear button uses the translated string
-    document.styleSheets[0].addRule('.select2-selection__clear::after','content:  "{{ trans('backpack::crud.clear') }}";');
+    document.styleSheets[0].addRule('.select2-selection__clear::after','content:  "{{ trans('skote::crud.clear') }}";');
 
 
     /**
@@ -178,7 +178,7 @@
         $(element).trigger('change');
 
         var $select2Settings = {
-                theme: 'bootstrap',
+                theme: 'default',
                 multiple: $multiple,
                 placeholder: $placeholder,
                 allowClear: $allowClear,
