@@ -3,9 +3,9 @@
 
 <?php
     $field['options'] = [
-        'page_link'     => trans('backpack::crud.page_link'),
-        'internal_link' => trans('backpack::crud.internal_link'),
-        'external_link' => trans('backpack::crud.external_link'),
+        'page_link'     => trans('skote::crud.page_link'),
+        'internal_link' => trans('skote::crud.internal_link'),
+        'external_link' => trans('skote::crud.external_link'),
     ];
     $field['allows_null'] = false;
     $page_model = $field['page_model'];
@@ -52,7 +52,7 @@
                     type="url"
                     class="form-control"
                     name="{!! $entry_link !!}"
-                    placeholder="{{ trans('backpack::crud.page_link_placeholder') }}"
+                    placeholder="{{ trans('skote::crud.page_link_placeholder') }}"
 
                     @if (!isset($entry) || $entry->$entry_type !='external_link')
                         disabled="disabled"
@@ -71,7 +71,7 @@
                     type="text"
                     class="form-control"
                     name="{!! $entry_link !!}"
-                    placeholder="{{ trans('backpack::crud.internal_link_placeholder', ['url', url(config('backpack.base.route_prefix').'/page')]) }}"
+                    placeholder="{{ trans('skote::crud.internal_link_placeholder', ['url', url(config('backpack.base.route_prefix').'/page')]) }}"
 
                     @if (!isset($entry) || $entry->$entry_type!='internal_link')
                         disabled="disabled"

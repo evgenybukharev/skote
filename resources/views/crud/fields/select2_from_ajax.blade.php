@@ -75,7 +75,7 @@
     @if ($entity_model::isColumnNullable($field['name']))
     <style type="text/css">
         .select2-selection__clear::after {
-            content: ' {{ trans('backpack::crud.clear') }}';
+            content: ' {{ trans('skote::crud.clear') }}';
         }
     </style>
     @endif

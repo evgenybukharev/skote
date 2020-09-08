@@ -13,7 +13,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="{{ $entity }}-inline-create-dialog-label">
-            {!! $crud->getSubheading() ?? trans('backpack::crud.add').' '.$crud->entity_name !!}
+            {!! $crud->getSubheading() ?? trans('skote::crud.add').' '.$crud->entity_name !!}
           </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -41,8 +41,8 @@
     </form>
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="cancelButton">{{trans('backpack::crud.cancel')}}</button>
-          <button type="button" class="btn btn-primary" id="saveButton">{{trans('backpack::crud.save')}}</button>
+        <button type="button" class="btn btn-secondary" id="cancelButton">{{trans('skote::crud.cancel')}}</button>
+          <button type="button" class="btn btn-primary" id="saveButton">{{trans('skote::crud.save')}}</button>
         </div>
       </div>
     </div>

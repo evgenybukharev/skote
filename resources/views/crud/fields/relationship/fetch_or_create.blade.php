@@ -163,7 +163,7 @@ if($activeInlineCreate) {
             @endif
             <script>
 
-document.styleSheets[0].addRule('.select2-selection__clear::after','content:  "{{ trans('backpack::crud.clear') }}";');
+document.styleSheets[0].addRule('.select2-selection__clear::after','content:  "{{ trans('skote::crud.clear') }}";');
 
 // this is the function responsible for querying the ajax endpoint with our query string, emulating the select2
 // ajax search mechanism.
@@ -417,7 +417,7 @@ function triggerModal(element) {
 
                 new Noty({
                     type: "info",
-                    text: '{{ trans('backpack::crud.related_entry_created_success') }}',
+                    text: '{{ trans('skote::crud.related_entry_created_success') }}',
                 }).show();
             },
             error: function (result) {
@@ -431,7 +431,7 @@ function triggerModal(element) {
 
                 new Noty({
                     type: "error",
-                    text: '<strong>{{ trans('backpack::crud.related_entry_created_error') }}</strong><br> '+message,
+                    text: '<strong>{{ trans('skote::crud.related_entry_created_error') }}</strong><br> '+message,
                 }).show();
 
                 //revert save button back to normal
