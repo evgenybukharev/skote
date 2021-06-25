@@ -22,7 +22,7 @@
       }
   },
   "require": {
-    "laravel/framework": "^7.0",
+    "laravel/framework": ">=7.0",
     "php": ">=7.0",
     "barryvdh/laravel-elfinder": "^0.4.5"
   }
