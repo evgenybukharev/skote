@@ -12,7 +12,7 @@
 
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item active">Добро пожаловать в ВсеЗаймы</li>
+                        <li class="breadcrumb-item active">Добро пожаловать в {{config('app.name')}}</li>
                     </ol>
                 </div>
 
