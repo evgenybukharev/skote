@@ -1,29 +1,35 @@
 {
-  "name": "evgenybukharev/skote",
-  "description": "Easy Skote integration with Laravel",
-  "keywords": ["laravel", "skote", "admin", "administrator"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Evgeny Bukahrev",
-      "email": "bukharev.evgeny@ya.ru"
+    "name": "evgenybukharev/skote",
+    "description": "Easy Skote integration with Laravel",
+    "keywords": [
+        "laravel",
+        "skote",
+        "admin",
+        "administrator"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Evgeny Bukahrev",
+            "email": "bukharev.evgeny@ya.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "EvgenyBukharev\\Skote\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EvgenyBukharev\\Skote\\SkoteServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "laravel/framework": "^8.0",
+        "laravel/ui": "^2.0",
+        "php": ">=7.0",
+        "barryvdh/laravel-elfinder": "^0.4.5"
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "EvgenyBukharev\\Skote\\": "src/"
-    }
-  },
-  "extra": {
-      "laravel": {
-          "providers": [
-              "EvgenyBukharev\\Skote\\SkoteServiceProvider"
-          ]
-      }
-  },
-  "require": {
-    "laravel/framework": "^8.0",
-    "php": ">=7.0",
-    "barryvdh/laravel-elfinder": "^0.4.5"
-  }
 }
