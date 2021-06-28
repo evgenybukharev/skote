@@ -8,7 +8,7 @@
                         <img src="{{config('skote.path.logo-small','skote-logo-small-light.png')}}" alt="">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{config('skote.path.logo-big','skote-logo-big-light.png')}}" alt="">
+                        <img src="{{config('skote.path.logo-big','skote-logo-big-light.png')}}" alt="" height="50">
                     </span>
                 </a>
             </div>
