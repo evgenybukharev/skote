@@ -107,5 +107,5 @@ mix.copyDirectory(folder.src + "/images", folder.dist_assets + "images");
 mix.copyDirectory(folder.src + "/crud", folder.dist_assets + "crud");
 mix.copyDirectory(folder.src + "/filemanager", folder.dist_assets + "filemanager");
 mix.copyDirectory("./node_modules/ckeditor", folder.dist_assets + "libs/ckeditor");
-mix.copyDirectory("./node_modules/@ckeditor/ckeditor5-build-classic", folder.dist_assets + "libs/ckeditor5");
+mix.copyDirectory(folder.src + "/libs/ckeditor5", folder.dist_assets + "libs/ckeditor5");
 mix.copyDirectory("./node_modules/jquery-colorbox/example2/images", folder.dist_assets + "libs/jquery-colorbox/images");
