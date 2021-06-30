@@ -2,7 +2,7 @@
   "_args": [
     [
       "tinymce@5.4.1",
-      "D:\\projects\\personal\\skote"
+      "/home/evgeny/work/projects/skote"
     ]
   ],
   "_development": true,
@@ -27,7 +27,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/tinymce/-/tinymce-5.4.1.tgz",
   "_spec": "5.4.1",
-  "_where": "D:\\projects\\personal\\skote",
+  "_where": "/home/evgeny/work/projects/skote",
   "author": {
     "name": "Ephox Corporation"
   },
