@@ -1,44 +1,29 @@
 {
-  "_from": "ckeditor5@^28.0.0",
-  "_id": "ckeditor5@28.0.0",
+  "_from": "@ckeditor/ckeditor5-build-classic",
+  "_id": "@ckeditor/ckeditor5-build-classic@28.0.0",
   "_inBundle": false,
-  "_integrity": "sha512-88dGpRV5X732rvsBv22GgVc87uAH8TwPh5SjZG6e1kqvbYldMZQlQcamm+FiVk+5ARtYZyx5HXvN2jc+XUtH4A==",
-  "_location": "/ckeditor5",
+  "_integrity": "sha512-VgOGAMC9/47HZTgA4vnzhYfNCYRYzukXuS873B0gQ9cenP13CnYzwa1y9H/Przo4r5sYUPsNsLCG1i5eM58JWg==",
+  "_location": "/@ckeditor/ckeditor5-build-classic",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "tag",
     "registry": true,
-    "raw": "ckeditor5@^28.0.0",
-    "name": "ckeditor5",
-    "escapedName": "ckeditor5",
-    "rawSpec": "^28.0.0",
+    "raw": "@ckeditor/ckeditor5-build-classic",
+    "name": "@ckeditor/ckeditor5-build-classic",
+    "escapedName": "@ckeditor%2fckeditor5-build-classic",
+    "scope": "@ckeditor",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "^28.0.0"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
-    "/@ckeditor/ckeditor5-adapter-ckfinder",
-    "/@ckeditor/ckeditor5-autoformat",
-    "/@ckeditor/ckeditor5-basic-styles",
-    "/@ckeditor/ckeditor5-block-quote",
-    "/@ckeditor/ckeditor5-ckfinder",
-    "/@ckeditor/ckeditor5-cloud-services",
-    "/@ckeditor/ckeditor5-easy-image",
-    "/@ckeditor/ckeditor5-editor-classic",
-    "/@ckeditor/ckeditor5-essentials",
-    "/@ckeditor/ckeditor5-heading",
-    "/@ckeditor/ckeditor5-image",
-    "/@ckeditor/ckeditor5-indent",
-    "/@ckeditor/ckeditor5-link",
-    "/@ckeditor/ckeditor5-list",
-    "/@ckeditor/ckeditor5-media-embed",
-    "/@ckeditor/ckeditor5-paste-from-office",
-    "/@ckeditor/ckeditor5-table",
-    "/@ckeditor/ckeditor5-ui"
+    "#USER",
+    "/"
   ],
-  "_resolved": "https://registry.npmjs.org/ckeditor5/-/ckeditor5-28.0.0.tgz",
-  "_shasum": "b42bb19ced17d3cff47e36b7244e4158b6f6ecb4",
-  "_spec": "ckeditor5@^28.0.0",
-  "_where": "/home/evgeny/work/projects/skote/node_modules/@ckeditor/ckeditor5-adapter-ckfinder",
+  "_resolved": "https://registry.npmjs.org/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-28.0.0.tgz",
+  "_shasum": "cf42a70cb7946c0f4f3e6ee81d164677564fa8a5",
+  "_spec": "@ckeditor/ckeditor5-build-classic",
+  "_where": "/home/evgeny/work/projects/skote",
   "author": {
     "name": "CKSource",
     "url": "http://cksource.com/"
@@ -48,27 +33,50 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "@ckeditor/ckeditor5-clipboard": "^28.0.0",
-    "@ckeditor/ckeditor5-core": "^28.0.0",
-    "@ckeditor/ckeditor5-engine": "^28.0.0",
-    "@ckeditor/ckeditor5-enter": "^28.0.0",
+    "@ckeditor/ckeditor5-adapter-ckfinder": "^28.0.0",
+    "@ckeditor/ckeditor5-autoformat": "^28.0.0",
+    "@ckeditor/ckeditor5-basic-styles": "^28.0.0",
+    "@ckeditor/ckeditor5-block-quote": "^28.0.0",
+    "@ckeditor/ckeditor5-ckfinder": "^28.0.0",
+    "@ckeditor/ckeditor5-cloud-services": "^28.0.0",
+    "@ckeditor/ckeditor5-easy-image": "^28.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^28.0.0",
+    "@ckeditor/ckeditor5-essentials": "^28.0.0",
+    "@ckeditor/ckeditor5-heading": "^28.0.0",
+    "@ckeditor/ckeditor5-image": "^28.0.0",
+    "@ckeditor/ckeditor5-indent": "^28.0.0",
+    "@ckeditor/ckeditor5-link": "^28.0.0",
+    "@ckeditor/ckeditor5-list": "^28.0.0",
+    "@ckeditor/ckeditor5-media-embed": "^28.0.0",
     "@ckeditor/ckeditor5-paragraph": "^28.0.0",
-    "@ckeditor/ckeditor5-select-all": "^28.0.0",
-    "@ckeditor/ckeditor5-typing": "^28.0.0",
-    "@ckeditor/ckeditor5-ui": "^28.0.0",
-    "@ckeditor/ckeditor5-undo": "^28.0.0",
-    "@ckeditor/ckeditor5-upload": "^28.0.0",
-    "@ckeditor/ckeditor5-utils": "^28.0.0",
-    "@ckeditor/ckeditor5-widget": "^28.0.0"
+    "@ckeditor/ckeditor5-paste-from-office": "^28.0.0",
+    "@ckeditor/ckeditor5-table": "^28.0.0",
+    "@ckeditor/ckeditor5-typing": "^28.0.0"
   },
   "deprecated": false,
-  "description": "A set of ready-to-use rich text editors created with a powerful framework. Made with real-time collaborative editing in mind.",
+  "description": "The classic editor build of CKEditor 5 – the best browser-based rich text editor.",
+  "devDependencies": {
+    "@ckeditor/ckeditor5-core": "^28.0.0",
+    "@ckeditor/ckeditor5-dev-utils": "^25.0.0",
+    "@ckeditor/ckeditor5-dev-webpack-plugin": "^25.0.0",
+    "@ckeditor/ckeditor5-theme-lark": "^28.0.0",
+    "postcss-loader": "^3.0.0",
+    "raw-loader": "^4.0.1",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
   "engines": {
     "node": ">=12.0.0",
     "npm": ">=5.7.1"
   },
+  "files": [
+    "build"
+  ],
   "homepage": "https://ckeditor.com/ckeditor-5",
   "keywords": [
+    "ckeditor5-build",
     "ckeditor",
     "ckeditor5",
     "ckeditor 5",
@@ -86,10 +94,16 @@
     "framework"
   ],
   "license": "GPL-2.0-or-later",
-  "name": "ckeditor5",
+  "main": "./build/ckeditor.js",
+  "name": "@ckeditor/ckeditor5-build-classic",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ckeditor/ckeditor5.git"
+    "url": "git+https://github.com/ckeditor/ckeditor5.git",
+    "directory": "packages/ckeditor5-build-classic"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "preversion": "npm run build"
   },
   "version": "28.0.0"
 }
