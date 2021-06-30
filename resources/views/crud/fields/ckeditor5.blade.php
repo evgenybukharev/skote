@@ -3,7 +3,48 @@
     $field['extra_plugins'] = isset($field['extra_plugins']) ? implode(',', $field['extra_plugins']) : "embed,widget";
 
     $defaultOptions = [
-
+          'language'=> 'ru',
+'toolbar'=>[
+    'items'=>[
+         'heading',
+                            '|',
+                            'bold',
+                            'italic',
+                            'underline',
+                            'fontBackgroundColor',
+                            'fontColor',
+                            'fontFamily',
+                            'fontSize',
+                            'highlight',
+                            'link',
+                            'bulletedList',
+                            'numberedList',
+                            '|',
+                            'undo',
+                            'redo',
+                            '|',
+                            'alignment',
+                            'indent',
+                            'outdent',
+                            'removeFormat',
+                            'strikethrough',
+                            'subscript',
+                            'superscript',
+                            '-',
+                            'imageInsert',
+                            'pageBreak',
+                            'htmlEmbed',
+                            'insertTable',
+                            'mediaEmbed',
+                            'imageUpload',
+                            'blockQuote',
+                            'CKFinder',
+                            'code',
+                            'codeBlock',
+                            'horizontalLine'
+],
+    'shouldNotGroupWhenFull'=> true,
+]
     ];
 
     $field['options'] = array_merge($defaultOptions, $field['options'] ?? [])
@@ -38,33 +79,33 @@
     {{-- FIELD JS - will be loaded in the after_scripts section --}}
     @push('crud_fields_scripts')
         <script src="{{ asset('assets/vendor/skote/libs/ckeditor5/build/ckeditor.js') }}"></script>
-        <script src="{{ asset('assets/vendor/skote/libs/ckeditor5/build/translations/ru.js') }}"></script>
         <script>
-            function bpFieldInitCKEditorElement(element) {
+            const watchdog = new CKSource.EditorWatchdog();
 
+            window.watchdog = watchdog;
 
-                //when removing ckeditor field from page html the instance is not properly deleted.
-                //this event is triggered in repeatable on deletion so this field can intercept it
-                //and properly delete the instances so it don't throw errors of unexistent elements in page that has initialized ck instances.
-                element.on('backpack_field.deleted', function (e) {
-                    $ck_instance_name = element.siblings("[id^='cke_editor']").attr('id');
+            watchdog.setCreator((element, config) => {
+                return CKSource.Editor
+                    .create(element, config)
+                    .then(editor => {
+                        return editor;
+                    })
+            });
 
-                    //if the instance name starts with cke_ it was an auto-generated name from ckeditor
-                    //that happens because in repeatable we stripe the field names used by ckeditor, so it renders a random name
-                    //that starts with cke_
-                    if ($ck_instance_name.startsWith('cke_')) {
-                        $ck_instance_name = $ck_instance_name.substr(4);
-                    }
-                    //we fully destroy the instance when element is deleted from the page.
-                    CKEDITOR.instances[$ck_instance_name].destroy(true);
-                });
+            watchdog.setDestructor(editor => {
+                return editor.destroy();
+            });
 
-                ClassicEditor
-                    .create(document.querySelector('#editor-{{ $field['name'] }}'), element.data('options'))
-                    .catch(error => {
-                        console.log(error);
-                    });
+            watchdog.on('error', handleError);
 
+            watchdog.create(document.querySelector('#editor-{{ $field['name'] }}'), element.data('options'))
+            .catch(handleError);
+
+            function handleError(error) {
+                console.error('Oops, something went wrong!');
+                console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
+                console.warn('Build id: vf6qk9b3gx0k-dxy5x592ijkv');
+                console.error(error);
             }
         </script>
     @endpush
