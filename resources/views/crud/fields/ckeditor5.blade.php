@@ -2,52 +2,52 @@
 @php
     $field['extra_plugins'] = isset($field['extra_plugins']) ? implode(',', $field['extra_plugins']) : "embed,widget";
 
-    $defaultOptions = [
-          'language'=> 'ru',
-'toolbar'=>[
-    'items'=>[
-         'heading',
-                            '|',
-                            'bold',
-                            'italic',
-                            'underline',
-                            'fontBackgroundColor',
-                            'fontColor',
-                            'fontFamily',
-                            'fontSize',
-                            'highlight',
-                            'link',
-                            'bulletedList',
-                            'numberedList',
-                            '|',
-                            'undo',
-                            'redo',
-                            '|',
-                            'alignment',
-                            'indent',
-                            'outdent',
-                            'removeFormat',
-                            'strikethrough',
-                            'subscript',
-                            'superscript',
-                            '-',
-                            'imageInsert',
-                            'pageBreak',
-                            'htmlEmbed',
-                            'insertTable',
-                            'mediaEmbed',
-                            'imageUpload',
-                            'blockQuote',
-                            'CKFinder',
-                            'code',
-                            'codeBlock',
-                            'horizontalLine'
-],
-    'shouldNotGroupWhenFull'=> true,
-]
-    ];
+$defaultOptions = [
+    'language' => 'ru',
+    'toolbar' => [
+        'items' => [
+            'heading',
+            '|',
+            'bold',
+            'italic',
+            'underline',
+            'fontBackgroundColor',
+            'fontColor',
+            'fontFamily',
+            'fontSize',
+            'highlight',
+            'link',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'undo',
+            'redo',
+            '|',
+            'alignment',
+            'indent',
+            'outdent',
+            'removeFormat',
+            'strikethrough',
+            'subscript',
+            'superscript',
+            '-',
+            'imageInsert',
+            'pageBreak',
+            'htmlEmbed',
+            'insertTable',
+            'mediaEmbed',
+            'imageUpload',
+            'blockQuote',
+            'CKFinder',
+            'code',
+            'codeBlock',
+            'horizontalLine',
+        ],
+        'shouldNotGroupWhenFull' => true,
+    ],
+];
 
-    $field['options'] = array_merge($defaultOptions, $field['options'] ?? [])
+$field['options'] = array_merge($defaultOptions, $field['options'] ?? [])
 @endphp
 
 @include('skote::crud.fields.inc.wrapper_start')
@@ -60,7 +60,7 @@
         data-options="{{ trim(json_encode($field['options'])) }}"
         @include('skote::crud.fields.inc.attributes', ['default_class' => 'form-control'])
     	>{{ old(square_brackets_to_dots($field['name'])) ?? $field['value'] ?? $field['default'] ?? '' }}</textarea>
-
+<div id="word-count"></div>
 {{-- HINT --}}
 @if (isset($field['hint']))
     <p class="help-block">{!! $field['hint'] !!}</p>
@@ -89,6 +89,11 @@
                     return CKSource.Editor
                         .create(element, config)
                         .then(editor => {
+                            const wordCountPlugin = editor.plugins.get('WordCount');
+                            const wordCountWrapper = document.getElementById('word-count');
+
+                            wordCountWrapper.appendChild(wordCountPlugin.wordCountContainer);
+
                             return editor;
                         })
                 });
