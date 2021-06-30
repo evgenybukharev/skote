@@ -80,32 +80,34 @@
     @push('crud_fields_scripts')
         <script src="{{ asset('assets/vendor/skote/libs/ckeditor5/build/ckeditor.js') }}"></script>
         <script>
-            const watchdog = new CKSource.EditorWatchdog();
+            function bpFieldInitCKEditorElement(element) {
+                const watchdog = new CKSource.EditorWatchdog();
 
-            window.watchdog = watchdog;
+                window.watchdog = watchdog;
 
-            watchdog.setCreator((element, config) => {
-                return CKSource.Editor
-                    .create(element, config)
-                    .then(editor => {
-                        return editor;
-                    })
-            });
+                watchdog.setCreator((element, config) => {
+                    return CKSource.Editor
+                        .create(element, config)
+                        .then(editor => {
+                            return editor;
+                        })
+                });
 
-            watchdog.setDestructor(editor => {
-                return editor.destroy();
-            });
+                watchdog.setDestructor(editor => {
+                    return editor.destroy();
+                });
 
-            watchdog.on('error', handleError);
+                watchdog.on('error', handleError);
 
-            watchdog.create(document.querySelector('#editor-{{ $field['name'] }}'), element.data('options'))
-            .catch(handleError);
+                watchdog.create(document.querySelector('#editor-{{ $field['name'] }}'), element.data('options'))
+                    .catch(handleError);
 
-            function handleError(error) {
-                console.error('Oops, something went wrong!');
-                console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
-                console.warn('Build id: vf6qk9b3gx0k-dxy5x592ijkv');
-                console.error(error);
+                function handleError(error) {
+                    console.error('Oops, something went wrong!');
+                    console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
+                    console.warn('Build id: vf6qk9b3gx0k-dxy5x592ijkv');
+                    console.error(error);
+                }
             }
         </script>
     @endpush
