@@ -30,6 +30,7 @@
         "laravel/framework": "^8.0",
         "laravel/ui": "^3.0",
         "php": ">=7.0",
-        "barryvdh/laravel-elfinder": "^0.4.5"
+        "barryvdh/laravel-elfinder": "^0.4.5",
+        "doctrine/dbal": "^2.6|^3.0"
     }
 }
