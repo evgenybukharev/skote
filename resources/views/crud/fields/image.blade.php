@@ -65,8 +65,11 @@
 </div>
 <div class="btn-group">
     <div class="btn btn-light btn-sm btn-file">
-        {{ trans('skote::crud.choose_file') }} <input type="file" accept="image/*" data-handle="uploadImage"  @include('skote::crud.fields.inc.attributes')>
+        {{ trans('skote::crud.choose_file') }} <input type="file" accept="image/*" data-handle="uploadImage" @include('skote::crud.fields.inc.attributes')>
         <input type="hidden" data-handle="hiddenImage" name="{{ $field['name'] }}" value="{{ $value }}">
+        <input type="hidden" value="{{ $field['prefix']??'' }}" name="prefix">
+        <input type="hidden" value="{{ $field['disk']??'' }}" name="disk">
+        <input type="hidden" value="{{ $field['filename']??'' }}" name="filename">
     </div>
     @if(isset($field['crop']) && $field['crop'])
         <button class="btn btn-light btn-sm" data-handle="rotateLeft" type="button" style="display: none;"><i class="fas fa-undo"></i></button>
@@ -95,24 +98,28 @@
 
     {{-- FIELD CSS - will be loaded in the after_styles section --}}
     @push('crud_fields_styles')
-        <link href="{{ asset('assets/vendor/skote/libs/cropperjs/cropperjs.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/vendor/skote/libs/cropperjs/cropperjs.min.css') }}" rel="stylesheet" type="text/css"/>
         <style>
             .image .btn-group {
                 margin-top: 10px;
             }
+
             img {
                 max-width: 100%; /* This rule is very important, please do not ignore this! */
             }
+
             .img-container, .img-preview {
                 width: 100%;
                 text-align: center;
             }
+
             .img-preview {
                 float: left;
                 margin-right: 10px;
                 margin-bottom: 10px;
                 overflow: hidden;
             }
+
             .preview-lg {
                 width: 263px;
                 height: 148px;
@@ -122,6 +129,7 @@
                 position: relative;
                 overflow: hidden;
             }
+
             .btn-file input[type=file] {
                 position: absolute;
                 top: 0;
@@ -163,13 +171,13 @@
                     checkOrientation: false,
                     autoCropArea: 1,
                     responsive: true,
-                    preview : element.find('.img-preview'),
-                    aspectRatio : element.attr('data-aspectRatio')
+                    preview: element.find('.img-preview'),
+                    aspectRatio: element.attr('data-aspectRatio')
                 };
                 var crop = element.attr('data-crop');
 
                 // Hide 'Remove' button if there is no image saved
-                if (!$hiddenImage.val()){
+                if (!$hiddenImage.val()) {
                     $previews.hide();
                     $remove.hide();
                 }
@@ -178,11 +186,11 @@
 
 
                 // Only initialize cropper plugin if crop is set to true
-                if(crop){
+                if (crop) {
 
-                    $remove.click(function() {
+                    $remove.click(function () {
                         $mainImage.cropper("destroy");
-                        $mainImage.attr('src','');
+                        $mainImage.attr('src', '');
                         $hiddenImage.val('');
                         $rotateLeft.hide();
                         $rotateRight.hide();
@@ -194,15 +202,15 @@
                     });
                 } else {
 
-                    $remove.click(function() {
-                        $mainImage.attr('src','');
+                    $remove.click(function () {
+                        $mainImage.attr('src', '');
                         $hiddenImage.val('');
                         $remove.hide();
                         $previews.hide();
                     });
                 }
 
-                $uploadImage.change(function() {
+                $uploadImage.change(function () {
                     var fileReader = new FileReader(),
                         files = this.files,
                         file;
@@ -213,7 +221,7 @@
                     file = files[0];
 
                     const maxImageSize = {{ $max_image_size_in_bytes }};
-                    if(maxImageSize > 0 && file.size > maxImageSize) {
+                    if (maxImageSize > 0 && file.size > maxImageSize) {
 
                         alert(`Please pick an image smaller than ${maxImageSize} bytes.`);
                     } else if (/^image\/\w+$/.test(file.type)) {
@@ -223,28 +231,28 @@
 
                             $uploadImage.val("");
                             $previews.show();
-                            if(crop){
+                            if (crop) {
                                 $mainImage.cropper(options).cropper("reset", true).cropper("replace", this.result);
                                 // Override form submit to copy canvas to hidden input before submitting
                                 // update the hidden input after selecting a new item or cropping
-                                $mainImage.on('ready cropstart cropend', function() {
+                                $mainImage.on('ready cropstart cropend', function () {
                                     var imageURL = $mainImage.cropper('getCroppedCanvas').toDataURL(file.type);
                                     $hiddenImage.val(imageURL);
                                     return true;
                                 });
-                                $rotateLeft.click(function() {
+                                $rotateLeft.click(function () {
                                     $mainImage.cropper("rotate", 90);
                                 });
-                                $rotateRight.click(function() {
+                                $rotateRight.click(function () {
                                     $mainImage.cropper("rotate", -90);
                                 });
-                                $zoomIn.click(function() {
+                                $zoomIn.click(function () {
                                     $mainImage.cropper("zoom", 0.1);
                                 });
-                                $zoomOut.click(function() {
+                                $zoomOut.click(function () {
                                     $mainImage.cropper("zoom", -0.1);
                                 });
-                                $reset.click(function() {
+                                $reset.click(function () {
                                     $mainImage.cropper("reset");
                                 });
                                 $rotateLeft.show();
@@ -255,7 +263,7 @@
                                 $remove.show();
 
                             } else {
-                                $mainImage.attr('src',this.result);
+                                $mainImage.attr('src', this.result);
                                 $hiddenImage.val(this.result);
                                 $remove.show();
                             }
